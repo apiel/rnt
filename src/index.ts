@@ -8,6 +8,6 @@ files.forEach((file: string) => {
     // console.log('load file', file);
     // const load = require(file);
     // console.log('load', load);
-    const result = execSync(`jest ${file}`);
+    const result = execSync(`jest -f ${file} -c /home/alex/dev/test/e2e/eg-app/jest-e2e.config.js`);
     console.log('result', result);
 });
