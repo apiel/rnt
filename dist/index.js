@@ -12,14 +12,30 @@ const fs_1 = require("fs");
 const util_1 = require("util");
 const path_1 = require("path");
 const mkdirp = require("mkdirp");
+const puppeteer_1 = require("puppeteer");
 const defaultBaseUrl = process.env.BASE_URL || 'http://localhost:3000';
 function loadUrls(dataUrls, baseUrl = defaultBaseUrl) {
     const actions = dataUrls.map((dataUrl, index) => __awaiter(this, void 0, void 0, function* () {
         const file = `${__dirname}/../data/${dataUrl.pathUrl}`;
-        yield util_1.promisify(mkdirp)(path_1.dirname(file));
-        yield util_1.promisify(fs_1.writeFile)(`${file}.data`, JSON.stringify({ dataUrl, baseUrl }, null, 4));
+        yield saveData(dataUrl, baseUrl, file);
+        yield loadPage(dataUrl, baseUrl, file);
     }));
     return Promise.all(actions);
 }
 exports.loadUrls = loadUrls;
+function saveData(dataUrl, baseUrl, file) {
+    return __awaiter(this, void 0, void 0, function* () {
+        yield util_1.promisify(mkdirp)(path_1.dirname(file));
+        yield util_1.promisify(fs_1.writeFile)(`${file}.data`, JSON.stringify({ dataUrl, baseUrl }, null, 4));
+    });
+}
+function loadPage(dataUrl, baseUrl, file) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const browser = yield puppeteer_1.launch();
+        const page = yield browser.newPage();
+        yield page.goto(`${baseUrl}${dataUrl.pathUrl}`);
+        yield page.screenshot({ path: `${file}.png` });
+        yield browser.close();
+    });
+}
 //# sourceMappingURL=index.js.map
