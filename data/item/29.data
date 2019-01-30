@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/29",
+        "data": {
+            "name": "Ruby Tremblay MD",
+            "address": "80355 Lourdes Street",
+            "city": "Brodyberg",
+            "country": "Germany",
+            "text": "Dolore repellat nulla asperiores maiores recusandae et rerum quo. Sit qui fuga corrupti quaerat illo. Incidunt quis at exercitationem et repudiandae est earum. Laborum culpa numquam enim itaque quos placeat.\n \rLaudantium non provident eum dolorem labore explicabo harum eum. Enim quod labore reprehenderit ut omnis nihil ut. Officia commodi sunt et magni.\n \rIpsum quia est. Nulla omnis dolorem eaque. Et tenetur debitis voluptatem aut nam id. Reiciendis vero ipsa quia hic. Enim et quibusdam consequatur consequatur sint eos quae praesentium.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/snowshade/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/21",
+        "data": {
+            "name": "Braden Will",
+            "address": "4429 Una Street",
+            "city": "East Godfreyton",
+            "country": "Kiribati",
+            "text": "Iusto dolor aut corrupti sunt quam voluptas. Aut voluptates quidem voluptatem cum. Officia amet ea nobis delectus ex sed aut quas.\n \rAmet eum necessitatibus et qui. Enim qui alias. Tempora suscipit ratione.\n \rNihil eveniet magni officiis. Cumque voluptatem rem quia dolorem voluptatibus dolores et commodi. Ad veniam molestiae voluptatibus. Dolor quos consequatur aliquam aut rerum.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/dparrelli/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

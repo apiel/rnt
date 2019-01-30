@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/23",
+        "data": {
+            "name": "Mrs. Lolita Pfeffer",
+            "address": "0134 Bogisich Prairie",
+            "city": "South Tiannaport",
+            "country": "Papua New Guinea",
+            "text": "Quam maxime quas ut omnis cumque qui. Impedit eos accusamus dolorem nobis voluptatem itaque quasi aut reiciendis. Ut expedita distinctio qui sunt. Non aut quas laboriosam odit voluptates iure officia sed.\n \rVoluptatem iste sit sed harum. Tempore optio et cum laudantium est. Natus quae ea et. Distinctio recusandae quo mollitia est reiciendis sunt.\n \rQuod non eaque sequi voluptas accusantium occaecati. Consequatur aut minima ut. Aut assumenda quo illo sed unde repellendus. Quam est est non odit architecto omnis ad quas.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/tweetubhai/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

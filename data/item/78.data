@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/78",
+        "data": {
+            "name": "Aurelie Goyette",
+            "address": "03230 Toy Tunnel",
+            "city": "Alexton",
+            "country": "Cote d'Ivoire",
+            "text": "Voluptas quia unde sint nostrum consectetur. Minus eos a. Voluptatum expedita vel est.\n \rVel quo omnis mollitia a vel suscipit. Voluptas voluptatem et quo. Quia vel doloribus hic architecto nostrum assumenda odio velit. Aut debitis iusto.\n \rEt aut sed explicabo aliquid eius est nostrum et ad. At laboriosam nostrum eaque non sit error voluptatum. Qui nihil saepe rem consequatur sequi beatae. Veniam ut sed qui.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/maxlinderman/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

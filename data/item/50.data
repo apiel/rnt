@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/50",
+        "data": {
+            "name": "Elinore Walsh PhD",
+            "address": "4045 Frami Creek",
+            "city": "West Parkerhaven",
+            "country": "Ethiopia",
+            "text": "Inventore corrupti magni voluptatem hic ipsam odio ipsa illum. Tenetur dolorem id vitae animi aut qui. Aperiam distinctio nulla eligendi et enim veniam. Labore esse dolorem. Ipsa alias voluptatibus nobis. Tenetur et reprehenderit animi ullam repudiandae.\n \rAt libero autem in. Quia et quae est deleniti numquam quo veniam. Omnis amet non. Consectetur qui exercitationem ab consequatur tenetur et ab non quod. Repellat impedit nisi sed sapiente vitae quia et.\n \rEnim provident excepturi sapiente ea omnis. Voluptas fugit dicta ratione sed tempore suscipit ad voluptatem est. Aut eum saepe sunt quisquam possimus inventore earum explicabo. Aut ipsam sed aut temporibus architecto consectetur. Sit distinctio aut optio quod. Ea vitae voluptas nemo.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mr_subtle/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/11",
+        "data": {
+            "name": "Lazaro Schulist DDS",
+            "address": "635 Bayer Via",
+            "city": "Fordside",
+            "country": "Barbados",
+            "text": "Dolor laboriosam illo temporibus fugiat placeat consectetur laudantium qui vitae. Velit beatae architecto et saepe. Quisquam provident ducimus dolores in. Sed quia quisquam architecto.\n \rSimilique voluptatem est ex ut odit saepe. Animi odit repellendus maiores temporibus dolor voluptatibus sunt nobis. Et repellendus quasi. Provident non qui quod. Voluptatem voluptatem omnis ducimus numquam unde. Nulla est illum quia voluptatem eos voluptatibus sit non.\n \rNatus nihil ea est possimus. Porro maxime maiores reiciendis. Esse alias sunt recusandae voluptatem. Tempora qui fugiat sint non impedit aperiam dolor omnis. Nihil assumenda dolor placeat cumque. Mollitia ea ad optio veritatis alias nihil.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/tumski/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/40",
+        "data": {
+            "name": "Lennie Lowe",
+            "address": "099 Carrie Underpass",
+            "city": "Port Caesar",
+            "country": "Svalbard & Jan Mayen Islands",
+            "text": "Et eligendi voluptatem repellat voluptas amet quis veritatis. Quidem cumque rerum fuga aut non aliquam ut tenetur et. Cum vel est. Sunt aut fugiat sit. Id ratione vero laborum quia minima eum sint.\n \rEst quis eos quae. Ducimus vel iste quo. Quis et et ut id ducimus quia. Ab in cupiditate et nulla minima saepe corrupti similique.\n \rDolores expedita aperiam ipsum fugit ut voluptatum officiis. Minus fuga quisquam. Ad magnam voluptate. Sed fugit repellendus enim repudiandae voluptatem. Maiores sit laborum amet vel et accusantium perferendis reprehenderit.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/chatyrko/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

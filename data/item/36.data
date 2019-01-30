@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/36",
+        "data": {
+            "name": "Georgianna Sporer",
+            "address": "505 Muller Radial",
+            "city": "North Janiyastad",
+            "country": "Wallis and Futuna",
+            "text": "Aliquam veniam et et. Nam rerum minima ad ipsam. Quam qui id optio quisquam repellat vero ut soluta beatae. Enim molestiae perferendis dolor. Nemo recusandae corporis ut aut nobis consequuntur amet harum.\n \rDoloribus dolorem et commodi recusandae. Doloribus consectetur beatae deleniti cupiditate aut asperiores qui. Neque provident est iusto facere aut minima et qui. Ut velit officiis ut impedit aliquam deserunt. Illum labore voluptates incidunt alias sapiente qui veniam natus tempora. Debitis dicta ea in sed minima voluptate nihil.\n \rLibero distinctio placeat dolores quia dolorum. Qui a molestiae exercitationem. Commodi adipisci consequuntur.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/scott_riley/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

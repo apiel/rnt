@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/61",
+        "data": {
+            "name": "Myriam Collins",
+            "address": "959 Cordia Islands",
+            "city": "Port Dora",
+            "country": "Bahrain",
+            "text": "Sequi nemo aut voluptates. Quo impedit ut vel neque dolores aut aliquid. Natus eaque et debitis blanditiis officia et blanditiis illo.\n \rEaque aut sit odio dicta deserunt nobis ullam in dolores. Perferendis nostrum facere temporibus atque quae. Veniam sed deserunt minus temporibus excepturi animi. Qui iusto voluptatem. Aliquam ut ipsa autem et.\n \rModi perferendis inventore odio pariatur consequatur neque laborum alias sit. Quo accusamus nesciunt iste eum et quia cumque. Eaque incidunt et consequatur sint.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/buddhasource/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

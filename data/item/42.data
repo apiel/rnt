@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/42",
+        "data": {
+            "name": "Viola Schroeder Jr.",
+            "address": "04208 Koepp Estate",
+            "city": "Brannonville",
+            "country": "Andorra",
+            "text": "Occaecati ut quod. Laudantium reiciendis accusamus quod distinctio esse magnam quod ut. Autem quas possimus quae itaque enim.\n \rVoluptatem numquam velit perferendis laborum animi unde magnam iure quod. Dolore quo molestiae. Praesentium et voluptas. Et impedit quidem corrupti eos cumque unde qui quibusdam. Aut repellendus ipsa sequi dolorem voluptatem non nisi praesentium. Sunt similique velit ipsa qui.\n \rSed deserunt esse dicta. Molestiae ut cumque eum velit dolor. Et excepturi omnis delectus mollitia harum ratione dolores incidunt. Quis rerum eum repellat sequi voluptatem. Nostrum similique explicabo nisi est aliquid unde.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/ashernatali/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

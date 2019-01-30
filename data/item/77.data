@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/77",
+        "data": {
+            "name": "Eriberto Kuphal",
+            "address": "648 Donna Fall",
+            "city": "Fisherburgh",
+            "country": "Austria",
+            "text": "Cum et hic cupiditate voluptatem perspiciatis. Tempora recusandae quae rerum consequuntur maiores numquam. Officiis et doloribus cupiditate sit occaecati dignissimos asperiores. Omnis sed est et reiciendis.\n \rSit a qui provident. Assumenda saepe vitae. Consequuntur explicabo nisi omnis at magni ex sed. Ut et omnis voluptates.\n \rNatus est aliquam eveniet sint enim non ut amet reprehenderit. Quasi officiis et libero quis sed pariatur magni. Sint rerum magni sit dolorem quia cupiditate. Nostrum numquam similique vel quaerat aperiam qui a incidunt aut. Omnis occaecati tempora quo.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/dudestein/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

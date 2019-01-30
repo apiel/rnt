@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/33",
+        "data": {
+            "name": "Mrs. Zoie Kertzmann",
+            "address": "9614 Rosalyn Loaf",
+            "city": "Mertzport",
+            "country": "Kiribati",
+            "text": "Enim sunt omnis odio quidem adipisci ut. Sunt voluptatem qui. Voluptates natus culpa. Deleniti ea facere architecto eius molestiae sit animi voluptatem. Harum consequatur sit earum repellat accusamus.\n \rIpsum rem dolorem soluta tempora perferendis sequi voluptatibus. Ipsum occaecati et quia aut dolore et occaecati ut et. Necessitatibus molestiae assumenda pariatur. Qui aliquid recusandae molestiae aliquid. Dolorum eius voluptatibus.\n \rTemporibus quae amet laudantium perspiciatis suscipit quibusdam provident. Veniam quia quia perspiciatis libero. Soluta magnam et nihil magni exercitationem quibusdam enim. Est facilis esse quia dolorem voluptatem laboriosam quam accusantium. Culpa voluptatum distinctio totam rerum voluptas consequatur.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/tanveerrao/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

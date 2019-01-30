@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/68",
+        "data": {
+            "name": "Mia Beier",
+            "address": "312 Romaguera Forges",
+            "city": "West Anneside",
+            "country": "French Polynesia",
+            "text": "Dolorem aut voluptas voluptas dolores alias et id minima voluptatem. Dolorem necessitatibus aut corporis voluptatem a est in. Accusantium quis molestiae minus nesciunt nulla autem magni.\n \rIure quis necessitatibus. Quia ad in facere ducimus quia. Et et voluptates illum excepturi sint molestiae dolor. Et ad et.\n \rDolore cumque dolorum neque. Perferendis explicabo ea eveniet sint et. Soluta similique aut ut. Molestias voluptas asperiores architecto ad culpa nostrum minus. Ea laboriosam et ipsam similique excepturi aperiam at. Libero vel error vel et nulla qui atque est qui.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/zackeeler/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

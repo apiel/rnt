@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/64",
+        "data": {
+            "name": "Alana Ruecker",
+            "address": "92322 Bashirian Shoals",
+            "city": "Hoegermouth",
+            "country": "Malta",
+            "text": "Nemo totam inventore praesentium qui nobis quia occaecati. Exercitationem sed ratione exercitationem saepe nemo provident. Commodi quam sequi. Soluta dolorum magni eos molestiae. Nobis vitae pariatur recusandae magnam consequatur. Consequatur voluptatibus sit voluptatem itaque veritatis autem et quidem labore.\n \rEaque quisquam ipsam quae incidunt. Et rerum omnis autem. Dicta possimus sed. Voluptatem distinctio nihil tenetur facere officiis atque facere. Modi et eos quidem modi facilis quia quidem similique molestiae. Molestias non exercitationem inventore sit commodi iure delectus.\n \rDucimus quis neque tempore qui ut quibusdam beatae. Non distinctio nostrum porro deleniti quia ut. Et enim est alias.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/rohixx/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

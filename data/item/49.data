@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/49",
+        "data": {
+            "name": "Zion Corwin",
+            "address": "17471 Jaleel Passage",
+            "city": "Port Gregfort",
+            "country": "Heard Island and McDonald Islands",
+            "text": "Sapiente odio consequatur mollitia. Ex sunt nobis fugiat eveniet eum natus. Animi culpa cumque.\n \rCommodi doloremque maiores sed accusamus consequatur voluptatem quia quibusdam quod. Itaque non et modi iure et est eum repellat. Odio deserunt quod et autem labore sit accusantium.\n \rVoluptatem voluptas quia autem quis laborum molestiae expedita. Sed blanditiis dolorem ut vel est harum amet delectus cupiditate. Corporis ea consequatur dolorum optio et incidunt.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/depaulawagner/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

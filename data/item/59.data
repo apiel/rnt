@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/59",
+        "data": {
+            "name": "Mara Emard",
+            "address": "3538 Gorczany Parkways",
+            "city": "Gerholdton",
+            "country": "Puerto Rico",
+            "text": "Sed quia porro sit quos dolores aut nobis doloremque numquam. Id aut sed sunt illum deserunt. Explicabo libero repellendus voluptatem debitis. Et ullam blanditiis quidem facilis. Reprehenderit nulla non sit voluptatem omnis ut quo.\n \rVoluptate est at sunt quaerat ratione veniam. Quia quo unde dolorem nostrum iure. Dolores mollitia recusandae ipsa illo.\n \rNon maiores quas ut earum necessitatibus aut nostrum et. Veritatis praesentium eos mollitia dicta ut animi est sapiente. Sint natus quis dolores.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/nastya_mane/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

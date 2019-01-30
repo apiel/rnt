@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/98",
+        "data": {
+            "name": "Perry McKenzie",
+            "address": "302 Jordan Plains",
+            "city": "West Marley",
+            "country": "Namibia",
+            "text": "Eveniet veritatis magni distinctio quidem quis nobis ea aut pariatur. Quia rerum voluptas ut ea impedit voluptatibus alias sint ex. Esse ullam debitis modi iste eius.\n \rVelit possimus omnis reiciendis quia vitae corporis eius illo. Eum unde voluptas omnis labore ut culpa nihil et et. Totam qui unde fugit accusantium.\n \rAsperiores dolores quaerat praesentium laboriosam vitae et. Dolorem vel rerum et totam quod fugiat sequi quasi in. Excepturi alias consequatur velit nobis rem. Et totam aspernatur et beatae repudiandae ut blanditiis quia.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/raquelwilson/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

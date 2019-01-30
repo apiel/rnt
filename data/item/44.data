@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/44",
+        "data": {
+            "name": "Marquise Heidenreich",
+            "address": "9674 Brayan Throughway",
+            "city": "Kimberlyberg",
+            "country": "Croatia",
+            "text": "Quam perferendis nam odit corporis autem minima ea occaecati. Eligendi explicabo odio sed eius. Quos hic doloribus quia ut. Officiis quaerat debitis eaque et perferendis ipsa sequi. Laudantium non possimus et. Ullam aliquid laboriosam deleniti reprehenderit vel id quo.\n \rSoluta consequatur vitae quae voluptatem. Et enim nisi deleniti omnis consectetur incidunt nulla. Quas sunt non beatae quis quibusdam excepturi voluptatum alias voluptatem.\n \rUt quaerat veniam qui dicta. Occaecati esse temporibus vero earum dignissimos dolores illo. Eos nostrum sit voluptatem qui magni porro. Velit minus eveniet dolor placeat velit error deserunt.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/felipeapiress/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

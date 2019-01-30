@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/86",
+        "data": {
+            "name": "Anais Lind",
+            "address": "004 Roselyn Route",
+            "city": "Durwardmouth",
+            "country": "Paraguay",
+            "text": "Dolorum error culpa quis. Quaerat voluptas dolores ducimus nihil id ut. Voluptas magnam non.\n \rSit quasi sequi minima dolorem culpa incidunt. Quaerat perferendis cumque doloremque delectus sit velit. Placeat libero eos ut eum voluptatibus quia consequatur rerum qui. Reiciendis suscipit itaque voluptatem sit consequatur voluptas aut. Non ipsam quod sit ut delectus praesentium voluptatem non culpa. Voluptate ea fuga eaque earum est optio sequi architecto.\n \rPerferendis porro qui exercitationem. Necessitatibus repellat tempore dolores tenetur tempore. Explicabo reiciendis neque doloremque. Rem aut laborum et quisquam nulla accusantium aperiam rerum sed. Sunt et ut soluta qui et iste. Voluptatem molestiae pariatur nam.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/lingeswaran/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

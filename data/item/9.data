@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/9",
+        "data": {
+            "name": "Jaunita Heidenreich",
+            "address": "0220 Kunze Prairie",
+            "city": "Leannonville",
+            "country": "Chile",
+            "text": "Non repellat odit illum qui deserunt sequi. Corporis ut voluptas mollitia et aperiam quo explicabo adipisci et. Qui aut autem. Aut id dolorem tenetur aut. Assumenda adipisci dolorem dolorem harum fuga.\n \rVoluptatum voluptas perferendis. Aliquid est quos non qui qui totam odio blanditiis laborum. Voluptatem aut aut possimus. Voluptatem asperiores maiores dolorem eius. Laboriosam quidem cupiditate eaque facere aliquam.\n \rConsequuntur eos enim sit quas est tempore accusamus assumenda. Magni qui voluptatem eos occaecati. Consequatur qui perferendis aut tempore optio est facere ducimus in. Dolores facilis consequatur consequatur odit atque suscipit vero error eum.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/nfedoroff/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

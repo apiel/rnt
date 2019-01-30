@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/72",
+        "data": {
+            "name": "Ray Stiedemann",
+            "address": "4983 Boehm Expressway",
+            "city": "Jordynmouth",
+            "country": "Kazakhstan",
+            "text": "Nam eaque et. Deleniti ipsa itaque. Laboriosam in qui voluptatum. Reiciendis molestias quasi velit et quis. Omnis debitis reprehenderit illo velit aspernatur consequatur. Et sunt sed natus dicta perferendis est rerum ipsum.\n \rRepellat ipsum et suscipit enim rerum ea vel tempora. Tempora ut et sint nobis. Distinctio soluta est quis numquam eum qui. Quibusdam eveniet natus dolor laudantium alias nesciunt. Quae consequuntur laudantium quae et. Non cumque in minima dolores tempora tenetur occaecati.\n \rOfficiis non repellat quae est autem sed. Voluptas rerum dolorem sed necessitatibus eum. A quis culpa id impedit. Inventore et necessitatibus. Nisi temporibus ex impedit eum nihil. Provident asperiores totam est.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/okcoker/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

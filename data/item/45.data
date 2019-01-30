@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/45",
+        "data": {
+            "name": "Ozella Botsford V",
+            "address": "667 Godfrey Villages",
+            "city": "Billyhaven",
+            "country": "Papua New Guinea",
+            "text": "Et consequatur molestiae. Nam cupiditate corporis est dolorum excepturi. Voluptas quia quisquam est animi. Earum corrupti dicta rerum.\n \rCorporis consectetur earum totam dolorum voluptas. Voluptas amet eum doloremque aut incidunt ut. Repellat quos sed perspiciatis quos soluta temporibus asperiores.\n \rDistinctio labore corrupti deleniti adipisci. Debitis et sit neque rerum nulla quod et error dignissimos. Est sed dolore nemo perspiciatis officia debitis qui.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/saulihirvi/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

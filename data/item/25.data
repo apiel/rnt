@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/25",
+        "data": {
+            "name": "Krystel Kuvalis III",
+            "address": "9147 Preston Lights",
+            "city": "Armstronghaven",
+            "country": "Slovenia",
+            "text": "Dignissimos in aut voluptates tempora explicabo ut perspiciatis veniam ducimus. Est necessitatibus perspiciatis et eligendi sequi assumenda aut quis harum. Non natus nisi reiciendis nesciunt. Dignissimos dolores vitae ut dolorem amet.\n \rEligendi assumenda sunt quam officiis eos et. Et deleniti aperiam sed sint facilis. Consequuntur maiores repellendus aut voluptatem magnam ut modi dolorem.\n \rAut delectus quos dicta quae aliquam minima ea rerum facilis. Minima enim suscipit deserunt quos. Enim cumque corrupti dolores perspiciatis harum.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/kurafire/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

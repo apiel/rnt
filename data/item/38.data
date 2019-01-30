@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/38",
+        "data": {
+            "name": "Dr. Bert Konopelski",
+            "address": "714 Karli Row",
+            "city": "Moenview",
+            "country": "Antarctica (the territory South of 60 deg S)",
+            "text": "Ut veniam enim consequatur. Libero exercitationem accusamus cum. Possimus perspiciatis iure et non corporis molestiae.\n \rIn recusandae consequatur voluptas sed. Voluptas rerum quod enim. Ut quae soluta sequi est. Alias dolores voluptate quidem.\n \rAtque ut eaque nemo voluptatum facere id veniam qui consequatur. Nostrum sunt esse. Numquam quo voluptatem illo quia quam sapiente qui. Rem et sit maxime illum blanditiis aut.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mkginfo/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

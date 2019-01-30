@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/0",
+        "data": {
+            "name": "Mina Watsica",
+            "address": "13912 Dibbert Common",
+            "city": "West Marcellus",
+            "country": "Hungary",
+            "text": "Nulla quam ipsam nobis cupiditate sed dignissimos. Incidunt accusantium sed libero repudiandae esse blanditiis natus et eos. Velit omnis et porro ut et ipsam explicabo eligendi occaecati. Et saepe eum dicta eum eaque enim ipsum inventore debitis. Aspernatur deserunt quam tempore a velit provident velit. Nostrum ipsam qui nobis repellendus fugiat velit sit.\n \rFuga doloribus distinctio placeat ullam minima ducimus temporibus modi. Architecto ducimus totam. Explicabo exercitationem ut quis sed magni cupiditate sit vitae soluta.\n \rVoluptates ut ullam quos. Illo error sunt laborum ratione a officia. Cumque incidunt aut provident esse. Eligendi quos esse ut ab voluptas sed quae nam eos. Autem rerum doloremque officia aut ut ut. Ducimus eos saepe consequatur.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/brandonburke/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

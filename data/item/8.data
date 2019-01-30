@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/8",
+        "data": {
+            "name": "Ransom Swift Sr.",
+            "address": "268 Goyette Passage",
+            "city": "Zemlakburgh",
+            "country": "Sierra Leone",
+            "text": "Ipsam est voluptates quia consequatur et et. Excepturi tempora itaque. Doloremque nemo porro atque necessitatibus est accusantium qui occaecati. Voluptas rerum eos rerum natus. Est ut qui aut et dolores nostrum.\n \rSaepe in sed. Qui sint quo sint cupiditate. Neque dolore hic quis inventore recusandae. Itaque in nulla vel et rerum tempora consequuntur dicta voluptate.\n \rIpsam voluptatem quia vero est. Velit tenetur illum. Amet odio cumque nesciunt.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/S0ufi4n3/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/99",
+        "data": {
+            "name": "Maxwell Keebler",
+            "address": "7979 Hunter Drive",
+            "city": "East Melvinshire",
+            "country": "Pakistan",
+            "text": "Iusto est et voluptatem. Qui mollitia saepe quaerat non atque reprehenderit necessitatibus. Soluta quo error sed debitis facere ad vel repellat enim. Reprehenderit voluptas nemo quod. Et nam qui repudiandae incidunt ut. Fuga eos pariatur quibusdam consequatur quia.\n \rEx doloremque repudiandae reprehenderit facilis facere perspiciatis aut ut qui. Molestiae voluptatem eius iste omnis nesciunt et magnam consequatur tempora. Voluptatem consectetur neque similique.\n \rRecusandae aut rerum culpa. Repudiandae soluta voluptas animi. Veritatis eligendi nam inventore culpa harum. Maiores quasi sed optio qui sit sit hic est. Sit laudantium blanditiis voluptatem eius qui aut saepe. Nulla nam qui unde non magnam quia illum.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/angelceballos/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

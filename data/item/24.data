@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/24",
+        "data": {
+            "name": "Taryn Miller",
+            "address": "8786 Zoie Walk",
+            "city": "Connellyburgh",
+            "country": "Bangladesh",
+            "text": "Et perferendis sed. Eius explicabo numquam voluptas eum nobis recusandae corrupti nostrum ut. Ex quos aliquam et voluptates. Est quibusdam accusantium consequatur praesentium aperiam veniam. Doloremque optio rerum vero assumenda quam sit dolor. Quo quia accusantium nemo aspernatur non at reiciendis nihil.\n \rTenetur qui necessitatibus rerum sint ducimus. Sit impedit in blanditiis ut. Quod doloribus perspiciatis est minus suscipit animi. Asperiores amet modi. Est esse ut et numquam recusandae mollitia.\n \rEos repudiandae a consequatur a. Eaque et inventore nostrum consequatur et enim consequatur illo voluptate. Qui ex rerum tenetur nam.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/nsamoylov/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/41",
+        "data": {
+            "name": "Tomasa Kautzer",
+            "address": "16662 Joaquin Estates",
+            "city": "Pamelaview",
+            "country": "Bermuda",
+            "text": "Consequatur accusantium a consequatur quaerat inventore in. Rerum molestiae ut ea tempore architecto. Eos magni occaecati beatae voluptatem nihil. Quas itaque quo quaerat et sed ipsa officia nesciunt voluptas. Suscipit quidem officia culpa neque non adipisci accusantium omnis itaque.\n \rUt voluptates est alias perferendis officia. Quod quis velit. Deleniti commodi qui aut aut.\n \rEa praesentium quidem debitis qui tempore vero inventore. Sequi fugit dolorum quia sunt maxime sit ea. Atque et rerum.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/adamnac/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

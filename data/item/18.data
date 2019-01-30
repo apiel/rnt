@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/18",
+        "data": {
+            "name": "Dr. Helene Klocko",
+            "address": "05441 Julianne Vista",
+            "city": "Danieltown",
+            "country": "Guinea-Bissau",
+            "text": "Labore ea tenetur a rerum. Laborum earum aut nihil nisi doloremque eveniet voluptate iusto non. Dolorem earum distinctio nobis. Et quas accusamus cum cumque.\n \rDolores minus perferendis aliquam rem animi ut. Eligendi illo perspiciatis magni repellendus voluptas in et cumque. Quo dolore non exercitationem hic officiis enim. Placeat et occaecati eveniet beatae sed. Dolorem fuga aut est corrupti.\n \rQui non inventore fuga excepturi at sit. Maxime rerum esse similique ipsam. Facilis tempora est.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/omnizya/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/52",
+        "data": {
+            "name": "Rhea Rempel",
+            "address": "348 Gleason Turnpike",
+            "city": "Keelingshire",
+            "country": "Ghana",
+            "text": "Eos repellat voluptas ut nihil tempora commodi non. A asperiores in aliquam est. A molestiae numquam recusandae nemo quo temporibus sequi porro sunt. Tempore et voluptate.\n \rEum voluptas non. Fugiat veritatis necessitatibus odit at cumque amet sint provident. Esse autem harum id ducimus at. Ad rem nulla qui esse. Et voluptates qui dolorem quaerat voluptas et. Cumque iure dolorum dolor enim.\n \rNulla quaerat ratione illum et aut pariatur dolorem. Iste atque quo laudantium. Qui debitis et aut voluptas laudantium. Assumenda occaecati dolores soluta. Molestiae modi saepe aut voluptate reiciendis nostrum vel. Quis suscipit qui possimus vel et quia.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/kaelifa/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

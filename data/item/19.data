@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/19",
+        "data": {
+            "name": "Sonia Cole",
+            "address": "1488 Vincenzo Pines",
+            "city": "West Linwoodstad",
+            "country": "Iran",
+            "text": "Et unde inventore ullam placeat autem hic. Sed voluptatem consectetur facilis facere distinctio consequatur. Voluptas iusto sint dolor officia est. Repudiandae id ab qui minus debitis voluptas voluptatem et. Dicta quisquam illo.\n \rConsequuntur itaque officia ut aperiam ut velit. Temporibus expedita perferendis facilis corporis at voluptatem non repellat. Culpa illo exercitationem unde non sed. At blanditiis quisquam officia non voluptatem atque.\n \rQuis necessitatibus et sunt qui delectus optio dolores quasi molestiae. Vero facere blanditiis aut magni facere nemo beatae rem deleniti. Dignissimos rerum tempore exercitationem ducimus ut nihil magni. Sint optio est dolorum quia voluptatem asperiores omnis.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/sharvin/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

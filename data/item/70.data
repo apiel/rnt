@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/70",
+        "data": {
+            "name": "Hanna Mante",
+            "address": "4741 Royce Pine",
+            "city": "Tremblayfurt",
+            "country": "Macao",
+            "text": "Impedit voluptates recusandae necessitatibus saepe dolor quod voluptates. Corporis quis totam natus est. Adipisci blanditiis consequatur autem voluptas aut. Aut vitae nihil ipsum et fugiat.\n \rEt odit earum minima aliquam ab quae veniam aspernatur. Velit voluptatem ut quibusdam modi culpa fugiat deserunt aut eum. Reiciendis ut ipsam ut omnis fuga delectus quo. Voluptas temporibus et quam minus placeat magni. Qui voluptas autem porro. Doloribus nemo ullam voluptatem.\n \rQui sint ut. Esse error aut unde perferendis. Ut placeat dolore sit voluptas saepe. Et non in maiores laboriosam omnis commodi.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/saulihirvi/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

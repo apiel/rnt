@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/90",
+        "data": {
+            "name": "Hillary Jones",
+            "address": "9325 Hailey Plains",
+            "city": "North Roberta",
+            "country": "Gabon",
+            "text": "Tempora reiciendis quam voluptatem. Quo repudiandae voluptatem inventore. Id laudantium aut eligendi ipsam praesentium. Eum et placeat quidem. Eum magnam qui.\n \rVoluptatem mollitia maxime aut quibusdam sed illo illum nobis. Ut autem tempora blanditiis quae non libero maiores iste. Nam omnis quo praesentium perspiciatis ut corrupti aut optio ad. Aliquam tempora numquam rerum omnis. Hic et labore repellat et neque doloremque.\n \rQuibusdam veniam laboriosam veniam labore reprehenderit ab. Iusto est atque sapiente doloremque voluptatem harum. Qui neque aut quo dolorem dicta. Vero beatae quod temporibus vero sit necessitatibus nam. Et iste architecto corporis.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/myastro/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

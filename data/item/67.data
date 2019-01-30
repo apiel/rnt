@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/67",
+        "data": {
+            "name": "Dashawn Schinner",
+            "address": "8384 Lia Lakes",
+            "city": "Romagueraberg",
+            "country": "Saint Vincent and the Grenadines",
+            "text": "Ut aut sed error pariatur laudantium est quo aperiam eius. Voluptas enim consectetur qui deserunt est. Iure dignissimos nisi et ea perspiciatis incidunt. Voluptatem quam quo veritatis id commodi. Explicabo et error exercitationem rerum assumenda assumenda rerum. Maiores amet iste placeat occaecati unde porro aut.\n \rQui ullam consectetur. Excepturi recusandae aut delectus qui voluptas dolores exercitationem. Dolorum et incidunt amet placeat fugit. Nulla possimus dignissimos accusamus.\n \rPraesentium et accusamus ducimus qui quo tempore. Maxime eaque mollitia minus. Error est ipsa quisquam maiores atque similique cupiditate qui ipsum.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/shinze/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

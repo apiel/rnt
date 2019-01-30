@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/93",
+        "data": {
+            "name": "Jairo Bode",
+            "address": "6685 Sterling Corner",
+            "city": "Frankieview",
+            "country": "Liechtenstein",
+            "text": "Et eos non ad tempora. Blanditiis sint et inventore dolor est quam. Tempore cumque dolorem. Dolorem fuga nobis magnam temporibus non ea dolor distinctio non.\n \rModi soluta et magni voluptatem voluptas voluptate assumenda eum. Rerum accusantium harum autem dolores. Quam asperiores itaque rerum voluptatem ea dolorum earum recusandae.\n \rRem et eos sint qui non. Et voluptatem excepturi qui. Ea officia nihil nesciunt et fuga saepe voluptatem. Magni eos numquam repellendus ipsam qui hic alias doloribus quam. Sit laudantium aliquam laudantium possimus voluptas maxime aspernatur non.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/joelcipriano/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

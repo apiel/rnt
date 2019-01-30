@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/32",
+        "data": {
+            "name": "Garret Rau",
+            "address": "52648 Hollie Cove",
+            "city": "Anabelview",
+            "country": "Mauritania",
+            "text": "Officiis sed nihil voluptatem amet provident error autem. Veniam voluptatem reprehenderit nulla reprehenderit qui non et fugit eaque. Ratione voluptatem et consequatur. Ea quis aut.\n \rVelit ipsam voluptatibus alias sequi. Ut nihil et fugiat incidunt aut. Beatae quos non voluptas quo harum. Totam pariatur libero at qui fugit cupiditate. Expedita enim sit corrupti temporibus.\n \rSaepe voluptatibus non modi voluptatibus totam aut. Nulla animi autem est voluptates esse culpa nobis est rerum. Velit et consequatur eum ut adipisci perferendis beatae. Possimus sed error assumenda.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/donjain/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

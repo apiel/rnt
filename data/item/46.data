@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/46",
+        "data": {
+            "name": "Roxanne Sawayn",
+            "address": "69630 Lexus Village",
+            "city": "Lake Nettie",
+            "country": "Luxembourg",
+            "text": "Quia voluptas quibusdam magni dicta eum delectus. Dolorem aperiam aut ad. Dolor occaecati debitis soluta vitae voluptas sit dolores nihil. Sint laborum magnam ratione voluptatem totam.\n \rSoluta ea enim. Rem sit animi aut. Enim officiis tempora est itaque. Fugit aliquid vero itaque non deleniti iste rerum sed id. Consequatur eum qui aut. Quas illum deserunt porro molestias earum.\n \rExpedita dolor sint tempora dolorum porro incidunt placeat deserunt id. Debitis magni magnam corporis laboriosam. Dolores fugit ipsam eos perspiciatis suscipit soluta numquam. Et atque eum asperiores.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/vinciarts/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

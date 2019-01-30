@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/3",
+        "data": {
+            "name": "Judge Smitham",
+            "address": "623 Murray Centers",
+            "city": "Olgachester",
+            "country": "Tunisia",
+            "text": "Est perferendis molestiae ut qui et possimus hic in hic. Iste sed repudiandae consequatur rerum molestiae reprehenderit exercitationem corrupti dolorem. Accusantium unde qui molestiae consequatur sint consequatur.\n \rSapiente aperiam quia ex consequuntur beatae dolores. Quas perferendis voluptatem praesentium hic sapiente dolorem suscipit. Rem quia odit. Quas magni rerum consequatur sed.\n \rEarum ex culpa eveniet debitis. Nulla voluptatem et delectus. Et unde ut quibusdam in quis. Quos hic animi ipsam.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/unterdreht/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/55",
+        "data": {
+            "name": "Miss Eryn Goodwin",
+            "address": "44862 Smith Lodge",
+            "city": "Port Katlynn",
+            "country": "Syrian Arab Republic",
+            "text": "Quia excepturi itaque commodi autem. Officia omnis illo perspiciatis qui ipsam. Et vel ea.\n \rSint culpa sequi asperiores minima dignissimos aut quas harum. Sapiente cupiditate animi animi. Soluta esse nihil.\n \rIpsam eos deleniti hic in. Labore voluptatem natus magni qui. Molestias magnam adipisci blanditiis.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/logorado/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

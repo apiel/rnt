@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/89",
+        "data": {
+            "name": "Mozelle Brown",
+            "address": "623 Kunde Wells",
+            "city": "Boehmton",
+            "country": "Botswana",
+            "text": "Dolore excepturi veniam recusandae maxime ut quia. Eius quia nihil error impedit nemo. Est distinctio sint. Voluptas dolorem magni dolor magnam ex. Excepturi fuga qui velit est ut et.\n \rUt praesentium ea cupiditate qui magni fugit fugit itaque aliquid. Dolor sequi voluptate molestias. Blanditiis est architecto temporibus in et optio qui quos. Architecto qui dolor nisi fugit hic qui architecto. Mollitia eum fuga. Inventore velit soluta fuga.\n \rOccaecati eveniet deleniti esse quod. Omnis qui aperiam sed libero aut occaecati dolores doloremque quidem. Nobis doloribus temporibus unde perspiciatis exercitationem cum temporibus. Sit laboriosam dignissimos est occaecati ea et rerum.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

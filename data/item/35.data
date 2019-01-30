@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/35",
+        "data": {
+            "name": "Mozell Schmidt",
+            "address": "5926 Gutmann Plaza",
+            "city": "North Anahiside",
+            "country": "Christmas Island",
+            "text": "Molestiae dolor quod autem hic consequuntur. Quam quia tempore. Autem dolore et dolores harum. Temporibus at nemo mollitia aspernatur labore aut amet voluptates.\n \rLabore et ut expedita placeat aut tempora. Quia non eaque sunt. Sed at dolorum odit. Modi necessitatibus aperiam molestiae cum. Incidunt eius velit nobis eos quisquam autem nemo nihil qui.\n \rNihil ducimus aut ut est. Eos inventore nihil. Enim non ullam incidunt tempore ex. Distinctio consectetur eaque totam rerum laboriosam aut.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/pierre_nel/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

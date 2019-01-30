@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/92",
+        "data": {
+            "name": "Jan Heidenreich",
+            "address": "858 Predovic Manor",
+            "city": "Auertown",
+            "country": "Paraguay",
+            "text": "Delectus natus minus est veniam. Et magnam dignissimos culpa. Voluptatem quia labore velit ea aut et commodi. Ea excepturi nemo ab amet et dolores sit qui.\n \rQuo deserunt delectus fugiat consequuntur libero cupiditate quidem pariatur. Sed et qui ex repellendus voluptatem quo ad nam. Eveniet eum est. Rerum ipsam et illo officiis quod mollitia ratione. Enim vel quidem et quia.\n \rUt impedit at. Natus et libero rerum. Ut neque earum sed ut reprehenderit eos ut ea aut.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/motionthinks/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

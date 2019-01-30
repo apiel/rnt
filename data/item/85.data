@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/85",
+        "data": {
+            "name": "Tyrell Abshire",
+            "address": "785 Hirthe Alley",
+            "city": "North Raeganside",
+            "country": "Syrian Arab Republic",
+            "text": "Corrupti quidem corrupti qui sunt. Perspiciatis at sint quasi rerum. Repellendus quis quia est repellendus deleniti ratione. Eos sequi est et omnis itaque non. Qui explicabo tempora ipsa consequatur est delectus.\n \rEa ut quasi veniam qui sint dolores. Dolorem doloribus numquam magnam quis. In voluptas omnis aperiam incidunt voluptatibus unde sunt. Laborum voluptas voluptatem quas occaecati sed explicabo eum. Dolorem est ipsa mollitia ut perferendis enim ipsa ea.\n \rAut quia aliquam et facere ipsam. Eos aliquam nemo quaerat omnis. Sequi aut omnis maiores nostrum.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/maikelk/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

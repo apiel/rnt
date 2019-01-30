@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/34",
+        "data": {
+            "name": "Horace Thiel",
+            "address": "56956 Loy Inlet",
+            "city": "Lake Mario",
+            "country": "Tokelau",
+            "text": "Dolores itaque magni qui expedita sequi quia aut. Provident quae assumenda ut assumenda. Neque molestias voluptas voluptatem et cupiditate at earum at et.\n \rSequi veniam quae omnis occaecati labore. Aliquam accusantium vitae esse et veritatis ducimus eum. Occaecati id recusandae quibusdam quia ducimus cum. Magnam eum qui doloremque. Rerum vel in distinctio officiis deserunt est nostrum. Laborum exercitationem cupiditate provident architecto.\n \rSit eos molestias dolorem nisi nesciunt assumenda maiores et optio. Natus sed sit et itaque velit. Enim non animi fugit officiis ea consequuntur enim. Voluptates nobis dolores quod ut voluptatibus voluptatibus esse voluptatem provident. Soluta alias excepturi. Ullam ipsam odit laboriosam veniam ut.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/meelford/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

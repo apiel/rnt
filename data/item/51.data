@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/51",
+        "data": {
+            "name": "Nico Boyle",
+            "address": "1226 Cormier Haven",
+            "city": "Altheafort",
+            "country": "Solomon Islands",
+            "text": "Error et nemo beatae debitis voluptatem doloribus voluptas omnis. Sunt et qui ipsa ipsam et consequatur ut nostrum. Ducimus deserunt laborum inventore numquam mollitia. Voluptas aut ab nemo. Dolores placeat corrupti voluptatem asperiores nihil voluptatibus.\n \rNisi aut molestiae numquam officia ut. Qui nihil delectus illum quo debitis numquam cumque odio expedita. Ex non ullam autem. Aperiam vero consectetur omnis.\n \rSapiente atque iste. Facilis quisquam enim sit tenetur quis libero omnis libero sed. Dolor at ullam. Quo nobis porro quod rerum sequi aspernatur porro sed. Aut impedit est. Optio omnis aliquam.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/uxpiper/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}

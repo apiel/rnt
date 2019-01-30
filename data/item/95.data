@@ -1,0 +1,14 @@
+{
+    "dataUrl": {
+        "pathUrl": "/item/95",
+        "data": {
+            "name": "Jolie O'Conner V",
+            "address": "0748 Pollich Mountains",
+            "city": "Port Nolanton",
+            "country": "Netherlands",
+            "text": "Non culpa nostrum unde quam. Voluptatibus neque inventore sit non pariatur libero incidunt. Ratione laudantium adipisci natus omnis nostrum. Ipsum consectetur dolorum voluptas doloribus qui sint quod tempore.\n \rTotam velit cum culpa perspiciatis a labore. Placeat accusantium at commodi ipsam harum voluptas similique. Quia voluptatem itaque voluptate.\n \rQui nam repellendus suscipit numquam quia distinctio repellendus. Accusantium dolor ratione porro nobis ut quae. Inventore quam quas soluta. Asperiores rerum unde id autem.",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/themikenagle/128.jpg"
+        }
+    },
+    "baseUrl": "http://localhost:3000"
+}
