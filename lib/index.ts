@@ -1,14 +1,19 @@
 import { writeFile } from 'fs';
 import { promisify } from 'util';
 
+const defaultBaseUrl: string = process.env.BASE_URL || 'http://localhost:3000';
+
 export interface DataUrl {
-    url: string;
+    pathUrl: string;
     data: any;
 }
 
-export function loadUrls(dataUrls: DataUrl[]): Promise<void> {
+export function loadUrls(
+    dataUrls: DataUrl[],
+    baseUrl: string = defaultBaseUrl,
+): Promise<void> {
     return promisify(writeFile)(
-        '/home/alex/dev/node/render-and-test/data/yo.txt',
-        JSON.stringify(dataUrls, null, 4),
+        `${__dirname}/../data/yo.txt`,
+        JSON.stringify({ dataUrls, baseUrl }, null, 4),
     );
 }

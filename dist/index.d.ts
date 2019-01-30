@@ -1,5 +1,5 @@
 export interface DataUrl {
-    url: string;
+    pathUrl: string;
     data: any;
 }
-export declare function loadUrls(dataUrls: DataUrl[]): Promise<void>;
+export declare function loadUrls(dataUrls: DataUrl[], baseUrl?: string): Promise<void>;
