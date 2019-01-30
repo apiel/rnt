@@ -4,7 +4,13 @@ import { dirname } from 'path';
 import * as mkdirp from 'mkdirp';
 import { launch } from 'puppeteer';
 
-const defaultBaseUrl: string = process.env.BASE_URL || 'http://localhost:3000';
+const defaultBaseUrl: string = process.env.RNT_BASE_URL || 'http://localhost:3000';
+const testFile: string = process.env.RNT_FILE;
+
+if (!testFile) {
+    console.error('exit tested file not specified');
+    process.exit();
+}
 
 export interface DataUrl {
     pathUrl: string;
@@ -27,7 +33,7 @@ async function saveData(dataUrl: DataUrl, baseUrl: string, file: string) {
     await promisify(mkdirp)(dirname(file));
     await promisify(writeFile)(
         `${file}.data`,
-        JSON.stringify({ dataUrl, baseUrl }, null, 4),
+        JSON.stringify({ dataUrl, baseUrl, testFile }, null, 4),
     );
 }
 

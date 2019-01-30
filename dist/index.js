@@ -13,7 +13,12 @@ const util_1 = require("util");
 const path_1 = require("path");
 const mkdirp = require("mkdirp");
 const puppeteer_1 = require("puppeteer");
-const defaultBaseUrl = process.env.BASE_URL || 'http://localhost:3000';
+const defaultBaseUrl = process.env.RNT_BASE_URL || 'http://localhost:3000';
+const testFile = process.env.RNT_FILE;
+if (!testFile) {
+    console.error('exit tested file not specified');
+    process.exit();
+}
 function loadUrls(dataUrls, baseUrl = defaultBaseUrl) {
     return __awaiter(this, void 0, void 0, function* () {
         for (const dataUrl of dataUrls) {
@@ -28,7 +33,7 @@ exports.loadUrls = loadUrls;
 function saveData(dataUrl, baseUrl, file) {
     return __awaiter(this, void 0, void 0, function* () {
         yield util_1.promisify(mkdirp)(path_1.dirname(file));
-        yield util_1.promisify(fs_1.writeFile)(`${file}.data`, JSON.stringify({ dataUrl, baseUrl }, null, 4));
+        yield util_1.promisify(fs_1.writeFile)(`${file}.data`, JSON.stringify({ dataUrl, baseUrl, testFile }, null, 4));
     });
 }
 function loadPage(dataUrl, baseUrl, file) {

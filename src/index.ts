@@ -14,11 +14,16 @@ rimrafSync(`${__dirname}/../data/*`);
 
 const files: string[] = globSync(`${projectPath}/**/*.test.e2e.js`);
 
+const loopTimer = 'loop files';
+console.time(loopTimer);
 files.forEach((file: string) => {
-    // console.log('load file', file);
-    // const load = require(file);
-    // console.log('load', load);
-    const ENVVAR = `BASE_URL=${config.baseUrl}`;
-    const result = execSync(`${ENVVAR} jest -f ${file} -c ${projectPath}/jest-e2e.config.js`);
-    console.log('result', result);
+    const timer = `file: ${file}`;
+    console.time(timer);
+    const ENVVAR = `RNT_BASE_URL=${config.baseUrl} RNT_FILE=${file}`;
+    const result = execSync(`${ENVVAR} jest -f ${file} -c ${projectPath}/jest-e2e.config.js`, {
+        stdio: 'ignore', // disable output
+    });
+    // console.log('result', result);
+    console.timeEnd(timer);
 });
+console.timeEnd(loopTimer);
