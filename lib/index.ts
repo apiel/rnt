@@ -17,6 +17,7 @@ export async function loadUrls(
 ): Promise<void> {
     for (const dataUrl of dataUrls) {
         const file = `${__dirname}/../data/${dataUrl.pathUrl}`;
+        console.log('file', file);
         await saveData(dataUrl, baseUrl, file);
         await loadPage(dataUrl, baseUrl, file);
     }
@@ -31,10 +32,21 @@ async function saveData(dataUrl: DataUrl, baseUrl: string, file: string) {
 }
 
 async function loadPage(dataUrl: DataUrl, baseUrl: string, file: string) {
-    const browser = await launch();
+    const browser = await launch({
+        // headless: false,
+    });
     const page = await browser.newPage();
-    await page.goto(`${baseUrl}${dataUrl.pathUrl}`);
-    // await page.screenshot({path: `${file}.png`});
+    try {
+        await page.goto(`${baseUrl}${dataUrl.pathUrl}`, {
+            waitUntil: 'networkidle2',
+            timeout: 3000,
+        });
+        // await page.screenshot({path: `${file}.png`});
+        const html = await page.content();
+        await promisify(writeFile)(file, html);
+    } catch (error) {
+        console.log('ERR', error); // should do something with that
+    }
 
     await browser.close();
 }

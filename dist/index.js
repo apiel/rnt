@@ -15,12 +15,14 @@ const mkdirp = require("mkdirp");
 const puppeteer_1 = require("puppeteer");
 const defaultBaseUrl = process.env.BASE_URL || 'http://localhost:3000';
 function loadUrls(dataUrls, baseUrl = defaultBaseUrl) {
-    const actions = dataUrls.map((dataUrl, index) => __awaiter(this, void 0, void 0, function* () {
-        const file = `${__dirname}/../data/${dataUrl.pathUrl}`;
-        yield saveData(dataUrl, baseUrl, file);
-        yield loadPage(dataUrl, baseUrl, file);
-    }));
-    return Promise.all(actions);
+    return __awaiter(this, void 0, void 0, function* () {
+        for (const dataUrl of dataUrls) {
+            const file = `${__dirname}/../data/${dataUrl.pathUrl}`;
+            console.log('file', file);
+            yield saveData(dataUrl, baseUrl, file);
+            yield loadPage(dataUrl, baseUrl, file);
+        }
+    });
 }
 exports.loadUrls = loadUrls;
 function saveData(dataUrl, baseUrl, file) {
@@ -31,10 +33,19 @@ function saveData(dataUrl, baseUrl, file) {
 }
 function loadPage(dataUrl, baseUrl, file) {
     return __awaiter(this, void 0, void 0, function* () {
-        const browser = yield puppeteer_1.launch();
+        const browser = yield puppeteer_1.launch({});
         const page = yield browser.newPage();
-        yield page.goto(`${baseUrl}${dataUrl.pathUrl}`);
-        yield page.screenshot({ path: `${file}.png` });
+        try {
+            yield page.goto(`${baseUrl}${dataUrl.pathUrl}`, {
+                waitUntil: 'networkidle2',
+                timeout: 3000,
+            });
+            const html = yield page.content();
+            yield util_1.promisify(fs_1.writeFile)(file, html);
+        }
+        catch (error) {
+            console.log('ERR', error);
+        }
         yield browser.close();
     });
 }
