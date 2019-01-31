@@ -1,29 +1,63 @@
 
 import { sync as globSync } from 'glob';
-import { execSync } from 'child_process';
+import { execSync, spawn, fork } from 'child_process';
 import { sync as rimrafSync } from 'rimraf';
 
 import { loadConfig, Config } from './loadConfig';
+import * as log from 'npmlog';
 
+const pre = 'rnd';
 const projectPath = '/home/alex/dev/test/e2e/eg-app';
 
 const config: Config = loadConfig(projectPath);
-console.log('config', config);
+log.info('config', config);
 
-rimrafSync(`${__dirname}/../data/*`);
-
-const files: string[] = globSync(`${projectPath}/**/*.test.e2e.js`);
-
-const loopTimer = 'loop files';
-console.time(loopTimer);
-files.forEach((file: string) => {
-    const timer = `file: ${file}`;
-    console.time(timer);
-    const ENVVAR = `RNT_BASE_URL=${config.baseUrl} RNT_FILE=${file}`;
-    const result = execSync(`${ENVVAR} jest -f ${file} -c ${projectPath}/jest-e2e.config.js`, {
-        stdio: 'ignore', // disable output
-    });
-    // console.log('result', result);
-    console.timeEnd(timer);
+const child = spawn('jest', ['-c', `${projectPath}/jest-e2e.config.js`], {
+    env: { ...process.env, RNT_START: 'RNT_START' },
+    stdio: ['pipe', 'pipe', 'pipe'],
 });
-console.timeEnd(loopTimer);
+
+let data = '';
+child.stdout.on('data', (buffer: Buffer) => {
+    data += buffer.toString();
+    while (data.indexOf('\n') !== -1) {
+        if (data.indexOf('[rnt] ') === 0) {
+            const payload = JSON.parse(data.substring(6, data.indexOf('\n')));
+            // console.log('### payload', payload);
+            doUrl(payload);
+        } else {
+            log.info('stdout', data);
+        }
+        data = data.substring(data.indexOf('\n') + 1);
+    }
+});
+
+child.stderr.on('data', (buffer: Buffer) => {
+    log.error('stderr', buffer.toString());
+});
+
+// child.on('message', message => {
+//     log.info('message', message);
+//     // child.send('Hi');
+// });
+
+child.on('close', (code) => {
+    log.info('close', 'child process exited with code', code);
+});
+
+function doUrl(payload: any) {
+    console.log('run test against', payload.dataUrl.url);
+    const runTest = spawn('jest', ['-c', `${projectPath}/jest-e2e.config.js`, payload.file], {
+        env: { ...process.env, RNT_URL: payload.url },
+        stdio: ['pipe', 'pipe', 'pipe'],
+    });
+    runTest.stdout.on('data', (buffer: Buffer) => {
+        log.info('runTest', 'stdout', buffer.toString());
+    });
+    runTest.stderr.on('data', (buffer: Buffer) => {
+        log.error('runTest', 'stderr', buffer.toString());
+    });
+    runTest.on('close', (code) => {
+        log.info('runTest', 'close', 'runTest process exited with code', code);
+    });
+}

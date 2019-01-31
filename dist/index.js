@@ -15,10 +15,6 @@ const mkdirp = require("mkdirp");
 const puppeteer_1 = require("puppeteer");
 const defaultBaseUrl = process.env.RNT_BASE_URL || 'http://localhost:3000';
 const testFile = process.env.RNT_FILE;
-if (!testFile) {
-    console.error('exit tested file not specified');
-    process.exit();
-}
 function loadUrls(dataUrls, baseUrl = defaultBaseUrl) {
     return __awaiter(this, void 0, void 0, function* () {
         for (const dataUrl of dataUrls) {

@@ -7,10 +7,10 @@ import { launch } from 'puppeteer';
 const defaultBaseUrl: string = process.env.RNT_BASE_URL || 'http://localhost:3000';
 const testFile: string = process.env.RNT_FILE;
 
-if (!testFile) {
-    console.error('exit tested file not specified');
-    process.exit();
-}
+// if (!testFile) {
+//     console.error('exit tested file not specified');
+//     process.exit();
+// }
 
 export interface DataUrl {
     pathUrl: string;
