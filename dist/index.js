@@ -74,6 +74,7 @@ exports.execJest = execJest;
 function run(prepareTest, pageTest) {
     if (!process.env.RNT_PATH_URL) {
         prepareTest();
+        it('should do something ', () => undefined);
     }
     else {
         pageTest();

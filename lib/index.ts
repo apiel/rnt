@@ -6,6 +6,7 @@ import { get as getStack } from 'stack-trace';
 import * as findUp from 'find-up';
 import { exec } from 'child_process';
 import * as _debug from 'debug';
+// import { it } from 'jest';
 
 const debug = _debug('rnt');
 debug(`Hello`);
@@ -95,6 +96,7 @@ export async function execJest(
 export function run(prepareTest: any, pageTest: any) {
     if (!process.env.RNT_PATH_URL) {
         prepareTest();
+        it('should do something ', () => undefined);
     } else {
         pageTest();
     }
