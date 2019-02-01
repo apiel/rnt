@@ -12,46 +12,24 @@ const fs_1 = require("fs");
 const util_1 = require("util");
 const path_1 = require("path");
 const mkdirp = require("mkdirp");
-const puppeteer_1 = require("puppeteer");
+const stack_trace_1 = require("stack-trace");
 const defaultBaseUrl = process.env.RNT_BASE_URL || 'http://localhost:3000';
-const testFile = process.env.RNT_FILE;
-if (!testFile) {
-    console.error('exit tested file not specified');
-    process.exit();
-}
 function loadUrls(dataUrls, baseUrl = defaultBaseUrl) {
     return __awaiter(this, void 0, void 0, function* () {
+        const stack = stack_trace_1.get();
+        const testFile = stack.map(item => item.getFileName())
+            .find(file => file && file.indexOf('.test.e2e.') !== -1);
         for (const dataUrl of dataUrls) {
             const file = `${__dirname}/../data/${dataUrl.pathUrl}`;
-            console.log('file', file);
-            yield saveData(dataUrl, baseUrl, file);
-            yield loadPage(dataUrl, baseUrl, file);
+            yield saveData(dataUrl, baseUrl, testFile, file);
         }
     });
 }
 exports.loadUrls = loadUrls;
-function saveData(dataUrl, baseUrl, file) {
+function saveData(dataUrl, baseUrl, testFile, file) {
     return __awaiter(this, void 0, void 0, function* () {
         yield util_1.promisify(mkdirp)(path_1.dirname(file));
         yield util_1.promisify(fs_1.writeFile)(`${file}.data`, JSON.stringify({ dataUrl, baseUrl, testFile }, null, 4));
-    });
-}
-function loadPage(dataUrl, baseUrl, file) {
-    return __awaiter(this, void 0, void 0, function* () {
-        const browser = yield puppeteer_1.launch({});
-        const page = yield browser.newPage();
-        try {
-            yield page.goto(`${baseUrl}${dataUrl.pathUrl}`, {
-                waitUntil: 'networkidle2',
-                timeout: 3000,
-            });
-            const html = yield page.content();
-            yield util_1.promisify(fs_1.writeFile)(file, html);
-        }
-        catch (error) {
-            console.log('ERR', error);
-        }
-        yield browser.close();
     });
 }
 //# sourceMappingURL=index.js.map

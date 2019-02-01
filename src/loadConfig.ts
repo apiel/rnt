@@ -5,7 +5,7 @@ export interface Config {
 }
 
 const defaultConfig: Config = {
-    baseUrl: 'http://localhost:3003',
+    baseUrl: 'http://localhost:3000',
 };
 
 export const loadConfig = (projectPath: string): Config => {
