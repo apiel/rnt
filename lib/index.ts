@@ -18,7 +18,7 @@ export interface Config {
 }
 
 const defaultConfig: Config = {
-    baseUrl: 'http://localhost:3000',
+    baseUrl: 'http://0.0.0.0:3000',
 };
 
 function getJestFile(cwd: string) {
@@ -83,7 +83,7 @@ export async function execJest(
             // stdio: 'ignore', // disable output
             env: {
                 ...process.env,
-                RNT_PATH_URL: dataUrl.pathUrl,
+                RNT_DATA_URL: JSON.stringify(dataUrl),
             },
         });
         // console.log('result', result);
@@ -94,10 +94,11 @@ export async function execJest(
 }
 
 export function run(prepareTest: any, pageTest: any) {
-    if (!process.env.RNT_PATH_URL) {
+    if (process.env.RNT_DATA_URL) {
+        const dataUrl: DataUrl = JSON.parse(process.env.RNT_DATA_URL);
+        pageTest(dataUrl);
+    } else {
         prepareTest();
         it('should do something ', () => undefined);
-    } else {
-        pageTest();
     }
 }

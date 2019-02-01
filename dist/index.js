@@ -61,7 +61,7 @@ function execJest(dataUrl, baseUrl, testFile, dataFile) {
             const cmd = `jest -c ${configFile} ${testFile}`;
             debug(cmd);
             const result = yield util_1.promisify(child_process_1.exec)(cmd, {
-                env: Object.assign({}, process.env, { RNT_PATH_URL: dataUrl.pathUrl }),
+                env: Object.assign({}, process.env, { RNT_DATA_URL: JSON.stringify(dataUrl) }),
             });
             debug(`result ${JSON.stringify(result)}`);
         }
@@ -72,12 +72,13 @@ function execJest(dataUrl, baseUrl, testFile, dataFile) {
 }
 exports.execJest = execJest;
 function run(prepareTest, pageTest) {
-    if (!process.env.RNT_PATH_URL) {
-        prepareTest();
-        it('should do something ', () => undefined);
+    if (process.env.RNT_DATA_URL) {
+        const dataUrl = JSON.parse(process.env.RNT_DATA_URL);
+        pageTest(dataUrl);
     }
     else {
-        pageTest();
+        prepareTest();
+        it('should do something ', () => undefined);
     }
 }
 exports.run = run;
