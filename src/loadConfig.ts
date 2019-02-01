@@ -14,4 +14,4 @@ export const loadConfig = (projectPath: string): Config => {
         const loadedConfig = require(configFile); // tslint:disable-line
         return { ...defaultConfig, ...loadedConfig };
     }
-}
+};

@@ -3,9 +3,34 @@ import { promisify, isArray } from 'util';
 import { dirname } from 'path';
 import * as mkdirp from 'mkdirp';
 import { get as getStack } from 'stack-trace';
-import { launch } from 'puppeteer';
+import * as findUp from 'find-up';
+import { exec } from 'child_process';
+import * as _debug from 'debug';
 
-const defaultBaseUrl: string = process.env.RNT_BASE_URL || 'http://localhost:3000';
+const debug = _debug('rnt');
+debug(`Hello`);
+
+// import { launch } from 'puppeteer';
+
+export interface Config {
+    baseUrl: string;
+}
+
+const defaultConfig: Config = {
+    baseUrl: 'http://localhost:3000',
+};
+
+function getJestFile(cwd: string) {
+    return findUp(['jest-e2e.config.js'], { cwd });
+}
+
+async function loadConfig(cwd: string): Promise<Config> {
+    const file = await findUp(['rend-and-test.config.js'], { cwd }); // might need to have other format
+    if (file) {
+        return require(file);
+    }
+    return defaultConfig;
+}
 
 export interface DataUrl {
     pathUrl: string;
@@ -14,17 +39,18 @@ export interface DataUrl {
 
 export async function loadUrls(
     dataUrls: DataUrl[],
-    baseUrl: string = defaultBaseUrl,
+    baseUrl?: string,
 ): Promise<void> {
     const stack = getStack();
     const testFile =
         stack.map(item => item.getFileName())
              .find(file => file && file.indexOf('.test.e2e.') !== -1); // make this configurable
+    const config = await loadConfig(testFile);
+    baseUrl = baseUrl || config.baseUrl;
     for (const dataUrl of dataUrls) {
         const file = `${__dirname}/../data/${dataUrl.pathUrl}`;
-        // console.log('file', file);
         await saveData(dataUrl, baseUrl, testFile, file);
-        // await loadPage(dataUrl, baseUrl, file);
+        await execJest(dataUrl, baseUrl, testFile, file);
     }
 }
 
@@ -32,31 +58,32 @@ async function saveData(
     dataUrl: DataUrl,
     baseUrl: string,
     testFile: string,
-    file: string,
+    dataFile: string,
 ) {
-    await promisify(mkdirp)(dirname(file));
+    await promisify(mkdirp)(dirname(dataFile));
     await promisify(writeFile)(
-        `${file}.data`,
+        `${dataFile}.data`,
         JSON.stringify({ dataUrl, baseUrl, testFile }, null, 4),
     );
 }
 
-// async function loadPage(dataUrl: DataUrl, baseUrl: string, file: string) {
-//     const browser = await launch({
-//         // headless: false,
-//     });
-//     const page = await browser.newPage();
-//     try {
-//         await page.goto(`${baseUrl}${dataUrl.pathUrl}`, {
-//             waitUntil: 'networkidle2',
-//             timeout: 3000,
-//         });
-//         // await page.screenshot({path: `${file}.png`});
-//         const html = await page.content();
-//         await promisify(writeFile)(file, html);
-//     } catch (error) {
-//         console.log('ERR', error); // should do something with that
-//     }
-
-//     await browser.close();
-// }
+export async function execJest(
+    dataUrl: DataUrl,
+    baseUrl: string,
+    testFile: string,
+    dataFile: string,
+) {
+    const configFile = await getJestFile(testFile);
+    const cmd = `jest -c ${configFile} ${testFile}`;
+    // process.stdout.write(cmd);
+    debug(cmd);
+    const result = await promisify(exec)(cmd, {
+        // stdio: 'ignore', // disable output
+        env: {
+            ...process.env,
+            RNT_PATH_URL: dataUrl.pathUrl,
+        },
+    });
+    // console.log('result', result);
+    debug(`result ${JSON.stringify(result)}`);
+}
