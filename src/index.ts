@@ -61,3 +61,5 @@ function doUrl(payload: any) {
         log.info('runTest', 'close', 'runTest process exited with code', code);
     });
 }
+
+// npx jest -c /home/alex/dev/test/e2e/eg-app/jest-e2e.config.js /home/alex/dev/test/e2e/eg-app/src/List.test.e2e.js
