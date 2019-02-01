@@ -56,14 +56,28 @@ function saveData(dataUrl, baseUrl, testFile, dataFile) {
 }
 function execJest(dataUrl, baseUrl, testFile, dataFile) {
     return __awaiter(this, void 0, void 0, function* () {
-        const configFile = yield getJestFile(testFile);
-        const cmd = `jest -c ${configFile} ${testFile}`;
-        debug(cmd);
-        const result = yield util_1.promisify(child_process_1.exec)(cmd, {
-            env: Object.assign({}, process.env, { RNT_PATH_URL: dataUrl.pathUrl }),
-        });
-        debug(`result ${JSON.stringify(result)}`);
+        try {
+            const configFile = yield getJestFile(testFile);
+            const cmd = `jest -c ${configFile} ${testFile}`;
+            debug(cmd);
+            const result = yield util_1.promisify(child_process_1.exec)(cmd, {
+                env: Object.assign({}, process.env, { RNT_PATH_URL: dataUrl.pathUrl }),
+            });
+            debug(`result ${JSON.stringify(result)}`);
+        }
+        catch (error) {
+            debug(`error ${JSON.stringify(error)}`);
+        }
     });
 }
 exports.execJest = execJest;
+function run(prepareTest, pageTest) {
+    if (!process.env.RNT_PATH_URL) {
+        prepareTest();
+    }
+    else {
+        pageTest();
+    }
+}
+exports.run = run;
 //# sourceMappingURL=index.js.map

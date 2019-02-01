@@ -7,3 +7,4 @@ export interface DataUrl {
 }
 export declare function loadUrls(dataUrls: DataUrl[], baseUrl?: string): Promise<void>;
 export declare function execJest(dataUrl: DataUrl, baseUrl: string, testFile: string, dataFile: string): Promise<void>;
+export declare function run(prepareTest: any, pageTest: any): void;

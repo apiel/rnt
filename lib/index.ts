@@ -73,17 +73,29 @@ export async function execJest(
     testFile: string,
     dataFile: string,
 ) {
-    const configFile = await getJestFile(testFile);
-    const cmd = `jest -c ${configFile} ${testFile}`;
-    // process.stdout.write(cmd);
-    debug(cmd);
-    const result = await promisify(exec)(cmd, {
-        // stdio: 'ignore', // disable output
-        env: {
-            ...process.env,
-            RNT_PATH_URL: dataUrl.pathUrl,
-        },
-    });
-    // console.log('result', result);
-    debug(`result ${JSON.stringify(result)}`);
+    try {
+        const configFile = await getJestFile(testFile);
+        const cmd = `jest -c ${configFile} ${testFile}`;
+        // process.stdout.write(cmd);
+        debug(cmd);
+        const result = await promisify(exec)(cmd, {
+            // stdio: 'ignore', // disable output
+            env: {
+                ...process.env,
+                RNT_PATH_URL: dataUrl.pathUrl,
+            },
+        });
+        // console.log('result', result);
+        debug(`result ${JSON.stringify(result)}`);
+    } catch (error) {
+        debug(`error ${JSON.stringify(error)}`);
+    }
+}
+
+export function run(prepareTest: any, pageTest: any) {
+    if (!process.env.RNT_PATH_URL) {
+        prepareTest();
+    } else {
+        pageTest();
+    }
 }
