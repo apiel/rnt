@@ -9,9 +9,6 @@ import * as _debug from 'debug';
 // import { it } from 'jest';
 
 const debug = _debug('rnt');
-debug(`Hello`);
-
-// import { launch } from 'puppeteer';
 
 export interface Config {
     baseUrl: string;
@@ -77,16 +74,13 @@ export async function execJest(
     try {
         const configFile = await getJestFile(testFile);
         const cmd = `jest -c ${configFile} ${testFile}`;
-        // process.stdout.write(cmd);
         debug(cmd);
         const result = await promisify(exec)(cmd, {
-            // stdio: 'ignore', // disable output
             env: {
                 ...process.env,
-                RNT_DATA_URL: JSON.stringify(dataUrl),
+                RNT_DATA_URL: JSON.stringify({ ...dataUrl, baseUrl }),
             },
         });
-        // console.log('result', result);
         debug(`result ${JSON.stringify(result)}`);
     } catch (error) {
         debug(`error ${JSON.stringify(error)}`);
@@ -95,7 +89,7 @@ export async function execJest(
 
 export function run(prepareTest: any, pageTest: any) {
     if (process.env.RNT_DATA_URL) {
-        const dataUrl: DataUrl = JSON.parse(process.env.RNT_DATA_URL);
+        const dataUrl = JSON.parse(process.env.RNT_DATA_URL); // : DataUrl
         pageTest(dataUrl);
     } else {
         prepareTest();

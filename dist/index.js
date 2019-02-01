@@ -17,9 +17,8 @@ const findUp = require("find-up");
 const child_process_1 = require("child_process");
 const _debug = require("debug");
 const debug = _debug('rnt');
-debug(`Hello`);
 const defaultConfig = {
-    baseUrl: 'http://localhost:3000',
+    baseUrl: 'http://0.0.0.0:3000',
 };
 function getJestFile(cwd) {
     return findUp(['jest-e2e.config.js'], { cwd });
@@ -56,18 +55,13 @@ function saveData(dataUrl, baseUrl, testFile, dataFile) {
 }
 function execJest(dataUrl, baseUrl, testFile, dataFile) {
     return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const configFile = yield getJestFile(testFile);
-            const cmd = `jest -c ${configFile} ${testFile}`;
-            debug(cmd);
-            const result = yield util_1.promisify(child_process_1.exec)(cmd, {
-                env: Object.assign({}, process.env, { RNT_DATA_URL: JSON.stringify(dataUrl) }),
-            });
-            debug(`result ${JSON.stringify(result)}`);
-        }
-        catch (error) {
-            debug(`error ${JSON.stringify(error)}`);
-        }
+        const configFile = yield getJestFile(testFile);
+        const cmd = `jest -c ${configFile} ${testFile}`;
+        debug(cmd);
+        const result = yield util_1.promisify(child_process_1.exec)(cmd, {
+            env: Object.assign({}, process.env, { RNT_DATA_URL: JSON.stringify(Object.assign({}, dataUrl, { baseUrl })) }),
+        });
+        debug(`result ${JSON.stringify(result)}`);
     });
 }
 exports.execJest = execJest;
