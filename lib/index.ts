@@ -65,6 +65,27 @@ async function saveData(
     );
 }
 
+// let currentPage;
+// export function page(pageToSave: any) {
+//     currentPage = pageToSave;
+// } // maybe save page somewhere and then move it to public
+
+async function savePage(
+    dataUrl: DataUrl,
+    baseUrl: string,
+    testFile: string,
+    dataFile: string,
+) {
+    // const html = await currentPage.content();
+    // const file = `/home/alex/dev/test/e2e/eg-app/public/${dataUrl.pathUrl}`;
+    // await promisify(mkdirp)(dirname(file));
+    // await promisify(writeFile)(
+    //     file,
+    //     html,
+    // );
+    // debug(`file save ${file}`);
+}
+
 export async function execJest(
     dataUrl: DataUrl,
     baseUrl: string,
@@ -82,6 +103,7 @@ export async function execJest(
             },
         });
         debug(`result ${JSON.stringify(result)}`);
+        await savePage(dataUrl, baseUrl, testFile, dataFile);
     } catch (error) {
         debug(`error ${JSON.stringify(error)}`);
     }

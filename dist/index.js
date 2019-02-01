@@ -53,15 +53,25 @@ function saveData(dataUrl, baseUrl, testFile, dataFile) {
         yield util_1.promisify(fs_1.writeFile)(`${dataFile}.data`, JSON.stringify({ dataUrl, baseUrl, testFile }, null, 4));
     });
 }
+function savePage(dataUrl, baseUrl, testFile, dataFile) {
+    return __awaiter(this, void 0, void 0, function* () {
+    });
+}
 function execJest(dataUrl, baseUrl, testFile, dataFile) {
     return __awaiter(this, void 0, void 0, function* () {
-        const configFile = yield getJestFile(testFile);
-        const cmd = `jest -c ${configFile} ${testFile}`;
-        debug(cmd);
-        const result = yield util_1.promisify(child_process_1.exec)(cmd, {
-            env: Object.assign({}, process.env, { RNT_DATA_URL: JSON.stringify(Object.assign({}, dataUrl, { baseUrl })) }),
-        });
-        debug(`result ${JSON.stringify(result)}`);
+        try {
+            const configFile = yield getJestFile(testFile);
+            const cmd = `jest -c ${configFile} ${testFile}`;
+            debug(cmd);
+            const result = yield util_1.promisify(child_process_1.exec)(cmd, {
+                env: Object.assign({}, process.env, { RNT_DATA_URL: JSON.stringify(Object.assign({}, dataUrl, { baseUrl })) }),
+            });
+            debug(`result ${JSON.stringify(result)}`);
+            yield savePage(dataUrl, baseUrl, testFile, dataFile);
+        }
+        catch (error) {
+            debug(`error ${JSON.stringify(error)}`);
+        }
     });
 }
 exports.execJest = execJest;
