@@ -42,8 +42,7 @@ function loadUrls(dataUrls, baseUrl) {
         const config = yield loadConfig(testFile);
         baseUrl = baseUrl || config.baseUrl;
         for (const dataUrl of dataUrls) {
-            const file = `${__dirname}/../data/${dataUrl.pathUrl}`;
-            yield execJest(dataUrl, baseUrl, testFile, file);
+            yield execJest(dataUrl, baseUrl, testFile);
         }
     });
 }
@@ -64,17 +63,22 @@ function savePage(tmpFile, { pathUrl }) {
         yield util_1.promisify(fs_1.rename)(tmpFile, newPath);
     });
 }
-function execJest(dataUrl, baseUrl, testFile, dataFile) {
+function execJest(dataUrl, baseUrl, testFile) {
     return __awaiter(this, void 0, void 0, function* () {
-        const configFile = yield getJestFile(testFile);
-        const cmd = `jest -c ${configFile} ${testFile}`;
-        debug(cmd);
-        const RNT_FILE = `${os_1.tmpdir()}/RNT_${md5(dataUrl.pathUrl)}`;
-        const result = yield util_1.promisify(child_process_1.exec)(cmd, {
-            env: Object.assign({}, process.env, { RNT_DATA_URL: JSON.stringify(Object.assign({}, dataUrl, { baseUrl })), RNT_FILE }),
-        });
-        debug(`result ${JSON.stringify(result)}`);
-        yield savePage(RNT_FILE, dataUrl);
+        try {
+            const configFile = yield getJestFile(testFile);
+            const cmd = `jest -c ${configFile} ${testFile}`;
+            debug(cmd);
+            const RNT_FILE = `${os_1.tmpdir()}/RNT_${md5(dataUrl.pathUrl)}`;
+            const result = yield util_1.promisify(child_process_1.exec)(cmd, {
+                env: Object.assign({}, process.env, { RNT_DATA_URL: JSON.stringify(Object.assign({}, dataUrl, { baseUrl })), RNT_FILE }),
+            });
+            debug(`result ${JSON.stringify(result)}`);
+            yield savePage(RNT_FILE, dataUrl);
+        }
+        catch (error) {
+            debug(`error ${JSON.stringify(error)}`);
+        }
     });
 }
 exports.execJest = execJest;

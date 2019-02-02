@@ -1,6 +1,6 @@
 import { writeFile, rename } from 'fs';
-import { promisify, isArray } from 'util';
-import { dirname, basename } from 'path';
+import { promisify } from 'util';
+import { dirname } from 'path';
 import * as mkdirp from 'mkdirp';
 import { get as getStack } from 'stack-trace';
 import * as findUp from 'find-up';
@@ -47,24 +47,9 @@ export async function loadUrls(
     const config = await loadConfig(testFile);
     baseUrl = baseUrl || config.baseUrl;
     for (const dataUrl of dataUrls) {
-        const file = `${__dirname}/../data/${dataUrl.pathUrl}`;
-        // await saveData(dataUrl, baseUrl, testFile, file);
-        await execJest(dataUrl, baseUrl, testFile, file);
+        await execJest(dataUrl, baseUrl, testFile);
     }
 }
-
-// async function saveData(
-//     dataUrl: DataUrl,
-//     baseUrl: string,
-//     testFile: string,
-//     dataFile: string,
-// ) {
-//     await promisify(mkdirp)(dirname(dataFile));
-//     await promisify(writeFile)(
-//         `${dataFile}.data`,
-//         JSON.stringify({ dataUrl, baseUrl, testFile }, null, 4),
-//     );
-// }
 
 export async function page(pageToSave: any) {
     const file = process.env.RNT_FILE;
@@ -89,9 +74,8 @@ export async function execJest(
     dataUrl: DataUrl,
     baseUrl: string,
     testFile: string,
-    dataFile: string,
 ) {
-    // try {
+    try {
         const configFile = await getJestFile(testFile);
         const cmd = `jest -c ${configFile} ${testFile}`;
         debug(cmd);
@@ -105,9 +89,9 @@ export async function execJest(
         });
         debug(`result ${JSON.stringify(result)}`);
         await savePage(RNT_FILE, dataUrl);
-    // } catch (error) {
-    //     debug(`error ${JSON.stringify(error)}`);
-    // }
+    } catch (error) {
+        debug(`error ${JSON.stringify(error)}`);
+    }
 }
 
 export function run(prepareTest: any, pageTest: any) {
