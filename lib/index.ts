@@ -6,7 +6,6 @@ import { get as getStack } from 'stack-trace';
 import * as findUp from 'find-up';
 import { exec } from 'child_process';
 import * as _debug from 'debug';
-// import { it } from 'jest';
 
 const debug = _debug('rnt');
 
