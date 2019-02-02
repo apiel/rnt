@@ -16,6 +16,8 @@ const stack_trace_1 = require("stack-trace");
 const findUp = require("find-up");
 const child_process_1 = require("child_process");
 const _debug = require("debug");
+const md5 = require("md5");
+const os_1 = require("os");
 const debug = _debug('rnt');
 const defaultConfig = {
     baseUrl: 'http://0.0.0.0:3000',
@@ -41,37 +43,38 @@ function loadUrls(dataUrls, baseUrl) {
         baseUrl = baseUrl || config.baseUrl;
         for (const dataUrl of dataUrls) {
             const file = `${__dirname}/../data/${dataUrl.pathUrl}`;
-            yield saveData(dataUrl, baseUrl, testFile, file);
             yield execJest(dataUrl, baseUrl, testFile, file);
         }
     });
 }
 exports.loadUrls = loadUrls;
-function saveData(dataUrl, baseUrl, testFile, dataFile) {
+function page(pageToSave) {
     return __awaiter(this, void 0, void 0, function* () {
-        yield util_1.promisify(mkdirp)(path_1.dirname(dataFile));
-        yield util_1.promisify(fs_1.writeFile)(`${dataFile}.data`, JSON.stringify({ dataUrl, baseUrl, testFile }, null, 4));
+        const file = process.env.RNT_FILE;
+        debug(`tmp html file: ${file}`);
+        const html = yield pageToSave.content();
+        yield util_1.promisify(fs_1.writeFile)(file, html);
     });
 }
-function savePage(dataUrl, baseUrl, testFile, dataFile) {
+exports.page = page;
+function savePage(tmpFile, { pathUrl }) {
     return __awaiter(this, void 0, void 0, function* () {
+        const newPath = `/home/alex/dev/test/e2e/render-and-test/example/pages/${pathUrl}`;
+        yield util_1.promisify(mkdirp)(path_1.dirname(newPath));
+        yield util_1.promisify(fs_1.rename)(tmpFile, newPath);
     });
 }
 function execJest(dataUrl, baseUrl, testFile, dataFile) {
     return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const configFile = yield getJestFile(testFile);
-            const cmd = `jest -c ${configFile} ${testFile}`;
-            debug(cmd);
-            const result = yield util_1.promisify(child_process_1.exec)(cmd, {
-                env: Object.assign({}, process.env, { RNT_DATA_URL: JSON.stringify(Object.assign({}, dataUrl, { baseUrl })) }),
-            });
-            debug(`result ${JSON.stringify(result)}`);
-            yield savePage(dataUrl, baseUrl, testFile, dataFile);
-        }
-        catch (error) {
-            debug(`error ${JSON.stringify(error)}`);
-        }
+        const configFile = yield getJestFile(testFile);
+        const cmd = `jest -c ${configFile} ${testFile}`;
+        debug(cmd);
+        const RNT_FILE = `${os_1.tmpdir()}/RNT_${md5(dataUrl.pathUrl)}`;
+        const result = yield util_1.promisify(child_process_1.exec)(cmd, {
+            env: Object.assign({}, process.env, { RNT_DATA_URL: JSON.stringify(Object.assign({}, dataUrl, { baseUrl })), RNT_FILE }),
+        });
+        debug(`result ${JSON.stringify(result)}`);
+        yield savePage(RNT_FILE, dataUrl);
     });
 }
 exports.execJest = execJest;

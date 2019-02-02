@@ -21,7 +21,7 @@ describe('Item test', () => {
             browser = await puppeteer.launch();
             page = await browser.newPage();
             await page.goto(`${baseUrl}${pathUrl}`);
-            // rnt.page(page);
+            rnt.page(page);
         });
         afterAll(async () => {
             await browser.close();

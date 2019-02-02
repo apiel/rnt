@@ -1,11 +1,13 @@
-import { writeFile } from 'fs';
+import { writeFile, rename } from 'fs';
 import { promisify, isArray } from 'util';
-import { dirname } from 'path';
+import { dirname, basename } from 'path';
 import * as mkdirp from 'mkdirp';
 import { get as getStack } from 'stack-trace';
 import * as findUp from 'find-up';
 import { exec } from 'child_process';
 import * as _debug from 'debug';
+import * as md5 from 'md5';
+import { tmpdir } from 'os';
 
 const debug = _debug('rnt');
 
@@ -46,43 +48,41 @@ export async function loadUrls(
     baseUrl = baseUrl || config.baseUrl;
     for (const dataUrl of dataUrls) {
         const file = `${__dirname}/../data/${dataUrl.pathUrl}`;
-        await saveData(dataUrl, baseUrl, testFile, file);
+        // await saveData(dataUrl, baseUrl, testFile, file);
         await execJest(dataUrl, baseUrl, testFile, file);
     }
 }
 
-async function saveData(
-    dataUrl: DataUrl,
-    baseUrl: string,
-    testFile: string,
-    dataFile: string,
-) {
-    await promisify(mkdirp)(dirname(dataFile));
+// async function saveData(
+//     dataUrl: DataUrl,
+//     baseUrl: string,
+//     testFile: string,
+//     dataFile: string,
+// ) {
+//     await promisify(mkdirp)(dirname(dataFile));
+//     await promisify(writeFile)(
+//         `${dataFile}.data`,
+//         JSON.stringify({ dataUrl, baseUrl, testFile }, null, 4),
+//     );
+// }
+
+export async function page(pageToSave: any) {
+    const file = process.env.RNT_FILE;
+    debug(`tmp html file: ${file}`);
+    const html = await pageToSave.content();
     await promisify(writeFile)(
-        `${dataFile}.data`,
-        JSON.stringify({ dataUrl, baseUrl, testFile }, null, 4),
+        file,
+        html,
     );
 }
 
-// let currentPage;
-// export function page(pageToSave: any) {
-//     currentPage = pageToSave;
-// } // maybe save page somewhere and then move it to public
-
 async function savePage(
-    dataUrl: DataUrl,
-    baseUrl: string,
-    testFile: string,
-    dataFile: string,
+    tmpFile: string,
+    { pathUrl }: DataUrl,
 ) {
-    // const html = await currentPage.content();
-    // const file = `/home/alex/dev/test/e2e/eg-app/public/${dataUrl.pathUrl}`;
-    // await promisify(mkdirp)(dirname(file));
-    // await promisify(writeFile)(
-    //     file,
-    //     html,
-    // );
-    // debug(`file save ${file}`);
+    const newPath = `/home/alex/dev/test/e2e/render-and-test/example/pages/${pathUrl}`;
+    await promisify(mkdirp)(dirname(newPath));
+    await promisify(rename)(tmpFile, newPath);
 }
 
 export async function execJest(
@@ -91,21 +91,23 @@ export async function execJest(
     testFile: string,
     dataFile: string,
 ) {
-    try {
+    // try {
         const configFile = await getJestFile(testFile);
         const cmd = `jest -c ${configFile} ${testFile}`;
         debug(cmd);
+        const RNT_FILE = `${tmpdir()}/RNT_${md5(dataUrl.pathUrl)}`;
         const result = await promisify(exec)(cmd, {
             env: {
                 ...process.env,
                 RNT_DATA_URL: JSON.stringify({ ...dataUrl, baseUrl }),
+                RNT_FILE,
             },
         });
         debug(`result ${JSON.stringify(result)}`);
-        await savePage(dataUrl, baseUrl, testFile, dataFile);
-    } catch (error) {
-        debug(`error ${JSON.stringify(error)}`);
-    }
+        await savePage(RNT_FILE, dataUrl);
+    // } catch (error) {
+    //     debug(`error ${JSON.stringify(error)}`);
+    // }
 }
 
 export function run(prepareTest: any, pageTest: any) {
