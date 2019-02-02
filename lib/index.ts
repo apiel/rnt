@@ -1,6 +1,6 @@
 import { writeFile, rename } from 'fs';
 import { promisify } from 'util';
-import { dirname } from 'path';
+import { dirname, join } from 'path';
 import * as mkdirp from 'mkdirp';
 import { get as getStack } from 'stack-trace';
 import * as findUp from 'find-up';
@@ -13,11 +13,18 @@ const debug = _debug('rnt');
 
 export interface Config {
     baseUrl: string;
+    dist: string;
 }
 
 const defaultConfig: Config = {
     baseUrl: 'http://0.0.0.0:3000',
+    dist: 'pages/',
 };
+
+async function getRootDir(cwd: string) {
+    const pkgFile = await findUp('package.json', { cwd });
+    return dirname(pkgFile);
+}
 
 function getJestFile(cwd: string) {
     return findUp(['jest-e2e.config.js'], { cwd });
@@ -47,7 +54,7 @@ export async function loadUrls(
     const config = await loadConfig(testFile);
     baseUrl = baseUrl || config.baseUrl;
     for (const dataUrl of dataUrls) {
-        await execJest(dataUrl, baseUrl, testFile);
+        await execJest(dataUrl, baseUrl, testFile, config);
     }
 }
 
@@ -64,8 +71,11 @@ export async function page(pageToSave: any) {
 async function savePage(
     tmpFile: string,
     { pathUrl }: DataUrl,
+    config: Config,
+    testFile: string,
 ) {
-    const newPath = `/home/alex/dev/test/e2e/render-and-test/example/pages/${pathUrl}`;
+    const rootDir = await getRootDir(testFile);
+    const newPath = join(rootDir, config.dist, pathUrl);
     await promisify(mkdirp)(dirname(newPath));
     await promisify(rename)(tmpFile, newPath);
 }
@@ -74,6 +84,7 @@ export async function execJest(
     dataUrl: DataUrl,
     baseUrl: string,
     testFile: string,
+    config: Config,
 ) {
     try {
         const configFile = await getJestFile(testFile);
@@ -88,7 +99,7 @@ export async function execJest(
             },
         });
         debug(`result ${JSON.stringify(result)}`);
-        await savePage(RNT_FILE, dataUrl);
+        await savePage(RNT_FILE, dataUrl, config, testFile);
     } catch (error) {
         debug(`error ${JSON.stringify(error)}`);
     }

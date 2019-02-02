@@ -21,7 +21,14 @@ const os_1 = require("os");
 const debug = _debug('rnt');
 const defaultConfig = {
     baseUrl: 'http://0.0.0.0:3000',
+    dist: 'pages/',
 };
+function getRootDir(cwd) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const pkgFile = yield findUp('package.json', { cwd });
+        return path_1.dirname(pkgFile);
+    });
+}
 function getJestFile(cwd) {
     return findUp(['jest-e2e.config.js'], { cwd });
 }
@@ -42,7 +49,7 @@ function loadUrls(dataUrls, baseUrl) {
         const config = yield loadConfig(testFile);
         baseUrl = baseUrl || config.baseUrl;
         for (const dataUrl of dataUrls) {
-            yield execJest(dataUrl, baseUrl, testFile);
+            yield execJest(dataUrl, baseUrl, testFile, config);
         }
     });
 }
@@ -56,14 +63,15 @@ function page(pageToSave) {
     });
 }
 exports.page = page;
-function savePage(tmpFile, { pathUrl }) {
+function savePage(tmpFile, { pathUrl }, config, testFile) {
     return __awaiter(this, void 0, void 0, function* () {
-        const newPath = `/home/alex/dev/test/e2e/render-and-test/example/pages/${pathUrl}`;
+        const rootDir = yield getRootDir(testFile);
+        const newPath = path_1.join(rootDir, config.dist, pathUrl);
         yield util_1.promisify(mkdirp)(path_1.dirname(newPath));
         yield util_1.promisify(fs_1.rename)(tmpFile, newPath);
     });
 }
-function execJest(dataUrl, baseUrl, testFile) {
+function execJest(dataUrl, baseUrl, testFile, config) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const configFile = yield getJestFile(testFile);
@@ -74,7 +82,7 @@ function execJest(dataUrl, baseUrl, testFile) {
                 env: Object.assign({}, process.env, { RNT_DATA_URL: JSON.stringify(Object.assign({}, dataUrl, { baseUrl })), RNT_FILE }),
             });
             debug(`result ${JSON.stringify(result)}`);
-            yield savePage(RNT_FILE, dataUrl);
+            yield savePage(RNT_FILE, dataUrl, config, testFile);
         }
         catch (error) {
             debug(`error ${JSON.stringify(error)}`);
