@@ -9,7 +9,7 @@ describe('Item test', () => {
             const response = await fetch('http://localhost:2000/');
             const json = await response.json();
             const dataUrls = json.map((data, index) => ({
-                pathUrl: `/item/${index}`,
+                pathUrl: `/item/${index}.html`,
                 data,
             }));
             await rnt.loadUrls(dataUrls);

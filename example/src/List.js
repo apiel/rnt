@@ -37,13 +37,13 @@ class List extends Component {
           {this.state.data.map((item, index) => (
             <div key={index}>
               <h2>
-                <Link to={{ pathname: `/item/${index}`}}>
+                <Link to={{ pathname: `/item/${index}.html`}}>
                     {item.name}
                 </Link>
               </h2>
               <img src={item.avatar} alt={item.name} />
               <p>{item.text}</p>
-              <Link to={{ pathname: `/item/${index}`}}>link</Link>
+              <Link to={{ pathname: `/item/${index}.html`}}>link</Link>
             </div>
           ))}
         </header>

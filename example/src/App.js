@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import './App.css';
 import List from './List';
@@ -17,7 +17,7 @@ const AppRouter = () => (
       </nav>
 
       <Route path="/" exact component={List} />
-      <Route path="/item/:id" component={Item} />
+      <Route path="/item/:id.html" component={Item} />
     </div>
   </Router>
 );
