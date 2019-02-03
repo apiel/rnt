@@ -1,6 +1,7 @@
 const rnt = require('render-and-test');
 const puppeteer = require('puppeteer');
 const fetch = require('node-fetch');
+const lodash = require('lodash');
 
 describe('Item test', () => {
     rnt.run(() => {
@@ -21,7 +22,7 @@ describe('Item test', () => {
             browser = await puppeteer.launch();
             page = await browser.newPage();
             await page.goto(`${baseUrl}${pathUrl}`);
-            rnt.page(page);
+            rnt.setPage(page);
         });
         afterAll(async () => {
             await browser.close();
@@ -29,6 +30,11 @@ describe('Item test', () => {
         it('should success', async () => {
             const text = await page.evaluate(() => document.body.textContent);
             expect(text).toContain(data.name);
+        });
+        it('should make a lighthouse audit', async () => {
+            const lhr = await rnt.audit(page);
+            const seoScore = lodash.get(lhr, 'categories.seo.score');
+            expect(seoScore).toBeGreaterThanOrEqual(0.7);
         });
     });
 });

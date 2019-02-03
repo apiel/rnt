@@ -18,6 +18,8 @@ const child_process_1 = require("child_process");
 const _debug = require("debug");
 const md5 = require("md5");
 const os_1 = require("os");
+const lighthouse = require("lighthouse");
+const url_1 = require("url");
 const debug = _debug('rnt');
 const defaultConfig = {
     baseUrl: 'http://0.0.0.0:3000',
@@ -54,15 +56,15 @@ function loadUrls(dataUrls, baseUrl) {
     });
 }
 exports.loadUrls = loadUrls;
-function page(pageToSave) {
+function setPage(page) {
     return __awaiter(this, void 0, void 0, function* () {
         const file = process.env.RNT_FILE;
         debug(`tmp html file: ${file}`);
-        const html = yield pageToSave.content();
+        const html = yield page.content();
         yield util_1.promisify(fs_1.writeFile)(file, html);
     });
 }
-exports.page = page;
+exports.setPage = setPage;
 function savePage(tmpFile, { pathUrl }, config, testFile) {
     return __awaiter(this, void 0, void 0, function* () {
         const rootDir = yield getRootDir(testFile);
@@ -101,4 +103,17 @@ function run(prepareTest, pageTest) {
     }
 }
 exports.run = run;
+function audit(page) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const browser = page.browser();
+        const url = page.url();
+        const { lhr } = yield lighthouse(url, {
+            port: (new url_1.URL(browser.wsEndpoint())).port,
+            output: 'json',
+            logLevel: 'error',
+        });
+        return lhr;
+    });
+}
+exports.audit = audit;
 //# sourceMappingURL=index.js.map

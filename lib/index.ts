@@ -8,6 +8,8 @@ import { exec } from 'child_process';
 import * as _debug from 'debug';
 import * as md5 from 'md5';
 import { tmpdir } from 'os';
+import * as lighthouse from 'lighthouse';
+import { URL } from 'url';
 
 const debug = _debug('rnt');
 
@@ -58,10 +60,10 @@ export async function loadUrls(
     }
 }
 
-export async function page(pageToSave: any) {
+export async function setPage(page: any) {
     const file = process.env.RNT_FILE;
     debug(`tmp html file: ${file}`);
-    const html = await pageToSave.content();
+    const html = await page.content();
     await promisify(writeFile)(
         file,
         html,
@@ -113,4 +115,16 @@ export function run(prepareTest: any, pageTest: any) {
         prepareTest();
         it('should do something ', () => undefined);
     }
+}
+
+export async function audit(page: any) {
+    const browser = page.browser();
+    const url = page.url();
+    const { lhr } = await lighthouse(url, {
+        port: (new URL(browser.wsEndpoint())).port,
+        output: 'json',
+        logLevel: 'error',
+    });
+
+    return lhr;
 }
