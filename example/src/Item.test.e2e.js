@@ -35,6 +35,6 @@ describe('Item test', () => {
             const lhr = await rnt.audit(page);
             const seoScore = lodash.get(lhr, 'categories.seo.score');
             expect(seoScore).toBeGreaterThanOrEqual(0.7);
-        });
+        }, 10000);
     });
 });

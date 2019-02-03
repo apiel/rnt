@@ -10,6 +10,7 @@ import * as md5 from 'md5';
 import { tmpdir } from 'os';
 import * as lighthouse from 'lighthouse';
 import { URL } from 'url';
+import * as express from 'express';
 
 const debug = _debug('rnt');
 
@@ -88,7 +89,7 @@ export async function execJest(
     testFile: string,
     config: Config,
 ) {
-    try {
+    // try {
         const configFile = await getJestFile(testFile);
         const cmd = `jest -c ${configFile} ${testFile}`;
         debug(cmd);
@@ -102,14 +103,18 @@ export async function execJest(
         });
         debug(`result ${JSON.stringify(result)}`);
         await savePage(RNT_FILE, dataUrl, config, testFile);
-    } catch (error) {
-        debug(`error ${JSON.stringify(error)}`);
-    }
+    // } catch (error) {
+    //     debug(`error ${JSON.stringify(error)}`);
+    // }
+}
+
+function getDataUrl() {
+    return JSON.parse(process.env.RNT_DATA_URL); // : DataUrl
 }
 
 export function run(prepareTest: any, pageTest: any) {
     if (process.env.RNT_DATA_URL) {
-        const dataUrl = JSON.parse(process.env.RNT_DATA_URL); // : DataUrl
+        const dataUrl = getDataUrl();
         pageTest(dataUrl);
     } else {
         prepareTest();
@@ -117,7 +122,7 @@ export function run(prepareTest: any, pageTest: any) {
     }
 }
 
-export async function audit(page: any) {
+export async function auditBeforeRender(page: any) {
     const browser = page.browser();
     const url = page.url();
     const { lhr } = await lighthouse(url, {
@@ -125,6 +130,30 @@ export async function audit(page: any) {
         output: 'json',
         logLevel: 'error',
     });
+
+    return lhr;
+}
+
+export async function audit(page: any) {
+    const port = 3001;
+    const app = express();
+    // app.use(express.static('./example/public'));
+    const html = await page.content();
+    const dataUrl = getDataUrl();
+    app.get(dataUrl.pathUrl, (req, res) => res.send(html));
+    const server = app.listen(port);
+
+    const browser = page.browser();
+    const url =  `http://127.0.0.1:${port}${dataUrl.pathUrl}`; // page.url();
+    const { lhr } = await lighthouse(url, {
+        port: (new URL(browser.wsEndpoint())).port,
+        output: 'json',
+        logLevel: 'error',
+    });
+
+    server.close();
+
+    // await promisify(writeFile)('/home/alex/dev/test/e2e/render-and-test/audit.json', JSON.stringify(lhr, null, 4));
 
     return lhr;
 }

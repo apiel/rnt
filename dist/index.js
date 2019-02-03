@@ -20,6 +20,7 @@ const md5 = require("md5");
 const os_1 = require("os");
 const lighthouse = require("lighthouse");
 const url_1 = require("url");
+const express = require("express");
 const debug = _debug('rnt');
 const defaultConfig = {
     baseUrl: 'http://0.0.0.0:3000',
@@ -75,26 +76,24 @@ function savePage(tmpFile, { pathUrl }, config, testFile) {
 }
 function execJest(dataUrl, baseUrl, testFile, config) {
     return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const configFile = yield getJestFile(testFile);
-            const cmd = `jest -c ${configFile} ${testFile}`;
-            debug(cmd);
-            const RNT_FILE = `${os_1.tmpdir()}/RNT_${md5(dataUrl.pathUrl)}`;
-            const result = yield util_1.promisify(child_process_1.exec)(cmd, {
-                env: Object.assign({}, process.env, { RNT_DATA_URL: JSON.stringify(Object.assign({}, dataUrl, { baseUrl })), RNT_FILE }),
-            });
-            debug(`result ${JSON.stringify(result)}`);
-            yield savePage(RNT_FILE, dataUrl, config, testFile);
-        }
-        catch (error) {
-            debug(`error ${JSON.stringify(error)}`);
-        }
+        const configFile = yield getJestFile(testFile);
+        const cmd = `jest -c ${configFile} ${testFile}`;
+        debug(cmd);
+        const RNT_FILE = `${os_1.tmpdir()}/RNT_${md5(dataUrl.pathUrl)}`;
+        const result = yield util_1.promisify(child_process_1.exec)(cmd, {
+            env: Object.assign({}, process.env, { RNT_DATA_URL: JSON.stringify(Object.assign({}, dataUrl, { baseUrl })), RNT_FILE }),
+        });
+        debug(`result ${JSON.stringify(result)}`);
+        yield savePage(RNT_FILE, dataUrl, config, testFile);
     });
 }
 exports.execJest = execJest;
+function getDataUrl() {
+    return JSON.parse(process.env.RNT_DATA_URL);
+}
 function run(prepareTest, pageTest) {
     if (process.env.RNT_DATA_URL) {
-        const dataUrl = JSON.parse(process.env.RNT_DATA_URL);
+        const dataUrl = getDataUrl();
         pageTest(dataUrl);
     }
     else {
@@ -103,7 +102,7 @@ function run(prepareTest, pageTest) {
     }
 }
 exports.run = run;
-function audit(page) {
+function auditBeforeRender(page) {
     return __awaiter(this, void 0, void 0, function* () {
         const browser = page.browser();
         const url = page.url();
@@ -112,6 +111,27 @@ function audit(page) {
             output: 'json',
             logLevel: 'error',
         });
+        return lhr;
+    });
+}
+exports.auditBeforeRender = auditBeforeRender;
+function audit(page) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const port = 3001;
+        const app = express();
+        const html = yield page.content();
+        const dataUrl = getDataUrl();
+        app.get(dataUrl.pathUrl, (req, res) => res.send(html));
+        const server = app.listen(port);
+        const browser = page.browser();
+        const url = `http://127.0.0.1:${port}${dataUrl.pathUrl}`;
+        const { lhr } = yield lighthouse(url, {
+            port: (new url_1.URL(browser.wsEndpoint())).port,
+            output: 'json',
+            logLevel: 'error',
+        });
+        server.close();
+        yield util_1.promisify(fs_1.writeFile)('/home/alex/dev/test/e2e/render-and-test/audit.json', JSON.stringify(lhr, null, 4));
         return lhr;
     });
 }
