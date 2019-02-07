@@ -71,6 +71,8 @@ export async function setPage(page: any) {
     );
 }
 
+// need to find if we need index.html ?
+// need to handle filename
 async function savePage(
     tmpFile: string,
     { pathUrl }: DataUrl,
@@ -89,7 +91,7 @@ export async function execJest(
     testFile: string,
     config: Config,
 ) {
-    // try {
+    try {
         const configFile = await getJestFile(testFile);
         const cmd = `jest -c ${configFile} ${testFile}`;
         debug(cmd);
@@ -103,9 +105,9 @@ export async function execJest(
         });
         debug(`result ${JSON.stringify(result)}`);
         await savePage(RNT_FILE, dataUrl, config, testFile);
-    // } catch (error) {
-    //     debug(`error ${JSON.stringify(error)}`);
-    // }
+    } catch (error) {
+        debug(`error ${JSON.stringify(error)}`);
+    }
 }
 
 function getDataUrl() {
