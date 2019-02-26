@@ -23,7 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "rm -rf example/pages/* && yarn build && DEBUG=rnt* npx jest -c example/jest-e2e.config.js"
+    "dev": "rm -rf example/pages/* && yarn build && DEBUG=rnt* npx jest -c example/jest-e2e.config.js",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,6 +36,14 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "node-fetch": "^2.3.0"
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@storybook/addon-storyshots": "^4.1.13",
+    "@storybook/addon-storyshots-puppeteer": "^4.1.13",
+    "@storybook/react": "^4.1.13",
+    "babel-loader": "^8.0.5",
+    "node-fetch": "^2.3.0",
+    "react-test-renderer": "^16.8.3",
+    "storybook-addon-specifications": "^2.1.2"
   }
 }
