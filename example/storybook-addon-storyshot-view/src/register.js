@@ -1,20 +1,18 @@
-// require('./manager').register();
-
 import React from 'react';
 import addons from '@storybook/addons';
-// import styled from '@emotion/styled';
+import styled from '@emotion/styled';
 
 export const ADDON_ID = 'storybook-addon-storyshot-view';
-export const PANEL_ID = `${ADDON_ID}/storyshot-view-panel`;
-export const EVENT_ID = `${ADDON_ID}/storyshot-view-event`;
+export const PANEL_ID = `${ADDON_ID}/panel`;
+export const EVENT_ID = `${ADDON_ID}/event`;
 
-// const NotesPanel = styled.div({
-//     margin: 10,
-//     width: '100%',
-//     overflow: 'auto',
-// });
+const StyledPanel = styled.div({
+    margin: 10,
+    width: '100%',
+    overflow: 'auto',
+});
 
-export class Yo extends React.Component {
+export class Panel extends React.Component {
     constructor(props, ...args) {
         super(props, ...args);
         this.state = { storyName: null, results: { wrongResults: [], goodResults: [] } };
@@ -40,17 +38,18 @@ export class Yo extends React.Component {
 
     render() {
         const results = this.state.results;
-        return <div results={results}>blah</div>;
+        console.log('resultsresults', results);
+        return <StyledPanel>blah</StyledPanel>;
     }
 }
+
 
 export function register() {
     addons.register(ADDON_ID, api => {
         const channel = addons.getChannel();
         addons.addPanel(PANEL_ID, {
             title: 'Storyshot',
-            // render: () => <NotesPanel>abc</NotesPanel>
-            render: () => <Yo channel={channel} api={api} />,
+            render: () => <Panel channel={channel} api={api} />,
         });
     });
 }
